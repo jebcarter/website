@@ -4,23 +4,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Jeb Carter Website</title>
+    <title>Jeb Carter Personal Site</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body style="background-color:powderblue;">
-    <p style="text-align:center"><img src="Jeb_Profile_Picture.jpeg" alt="Photograph of Me" class="center" width="168" height="243"></p>
+  <body>
+    <p class="midpage">
+      <img src="Jeb_Profile_Picture.jpeg" alt="Photograph of Me" class="midpage" style="width:168px;height:243px;">
+    </p>
 
-    <h1 style="font-family: Times New Roman; text-align:center;">About Me</h1>
-    <p style="font-family: Times New Roman;">
+    <p class="midpage">
+      <button onclick="document.location = 'engineering.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Engineering </span></button>
+      <button onclick="document.location = 'computerscience.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Computer Science </span></button>
+      <button onclick="document.location = 'music.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Music  </span></button>
+    </p>
+
+    <h1>About Me</h1>
+    <p>
       I am a sophomore studying Mechanical and Aerospace Engineering at
       Princeton University. I am pursuing minors in Applications of Computing
       and Robotics & Intelligent Systems. I'm an avid musician and singer as
       well as a Peer Academic Advisor. Additionally, I am Tour Manager and
       Social Media Chair for my a cappella group,
-      <a href="http://www.princetonroaring20.com/"> the Princeton Roaring 20</a>,
+      <a href="http://www.princetonroaring20.com/" title="Go to Roaring 20 Website"
+      target="_blank">the Princeton Roaring 20</a>,
       I sing tenor with the Princeton Chapel Choir, and I play on the club tennis team.
     </p>
-    <h2 style="font-family: Times New Roman; text-align:center;">Engineering Experience</h2>
-    <p style="font-family: Times New Roman;">
+    <h2>Engineering Experience</h2>
+    <p>
       Over the course of my first two years at Princeton, I’ve had the opportunity
       to participate in and lead several engineering projects related to my courses.
       Some of these projects include designing and testing a heat engine, soldering
@@ -28,7 +41,7 @@
       programming arduinos to autonomously collect laboratory data, and designing
       wind turbines in AutoCAD to optimize power output, just to name a few.
     </p>
-    <h3 style="font-family: Times New Roman; text-align:center;">Computer Science Experience</h3>
+    <h2>Computer Science Experience</h2>
     <p>
       I have extensive experience programming in Java and C. I have worked on
       numerous start-to-finish projects in both languages. Some of these projects
