@@ -10,8 +10,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-  height: 250px;
+  margin-top: 20px;
+  height: 260px;
   border-radius: 45%;
 }
 .buttonpagelinks {
