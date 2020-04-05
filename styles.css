@@ -8,9 +8,6 @@ body {
 }
 .profilepic {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
   height: 260px;
   border-radius: 45%;
 }
@@ -20,7 +17,7 @@ body {
   border-radius: 6px;
   border: none;
   color: white;
-  padding: 20px;
+  padding: 10px;
   font-size: 25px;
   font-family: Verdana;
   width: 300px;
