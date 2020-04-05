@@ -4,6 +4,7 @@ body {
 }
 .midpage {
     font-size: 150%;
+    text-align: center;
 }
 .buttonpagelinks {
   display: inline-block;
@@ -41,6 +42,14 @@ body {
   opacity: 1;
   right: 0;
 }
+.nassau-image {
+  background-image: url("nassau_hall.jpg");
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 h1 {
   font-size: 100%;
   text-align: center;
@@ -52,4 +61,7 @@ h2 {
 h3 {
   font-size: 100%;
   text-align: center;
+}
+div {
+  background-repeat: no-repeat;
 }
