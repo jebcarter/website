@@ -19,9 +19,10 @@ body {
   height: 260px;
   border-radius: 45%;
   position: absolute;
-  top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 50%;
+  margin-bottom: 50%;
 }
 .buttonpagelinks {
   display: inline-block;
