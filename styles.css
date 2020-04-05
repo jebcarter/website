@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 .nassau-image {
-  background-image: url("nassau_hall.jpg");
+  background-image: url("/images/nassau_hall.jpg");
   height: 320px;
   background-position: center;
   background-repeat: no-repeat;
