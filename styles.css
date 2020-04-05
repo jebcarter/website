@@ -10,7 +10,9 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 320px;
+  height: 250px;
+  border-radius: 35%;
+  border: 3;
 }
 .buttonpagelinks {
   display: inline-block;
