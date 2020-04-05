@@ -21,8 +21,7 @@ body {
   position: absolute;
   margin-left: 50%;
   margin-right: 50%;
-  margin-top: 50%;
-  margin-bottom: 50%;
+  top: 20px;
 }
 .buttonpagelinks {
   display: inline-block;
