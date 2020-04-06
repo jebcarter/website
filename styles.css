@@ -24,15 +24,15 @@ body {
   top: 20px;
 }
 .gears-image {
-  background: url("/images/gears.jpg") no-repeat center;
+  background: url("/images/gears.jpg") no-repeat;
   height: 320px;
-  position: relative;
+  background-position: relative;
   background-size: cover;
   font-family: Georgia;
   box-shadow: 0px -50px 40px powderblue inset;
 }
 .code-image {
-  background: url("/images/computercode.jpg") no-repeat center;
+  background: url("/images/computercode.jpg") no-repeat;
   height: 320px;
   background-position: relative;
   background-size: cover;
@@ -40,7 +40,7 @@ body {
   box-shadow: 0px -50px 40px powderblue inset;
 }
 .music-image {
-  background: url("/images/guitar.jpg") no-repeat center;
+  background: url("/images/guitar.jpg") no-repeat;
   height: 320px;
   background-position: relative;
   background-size: cover;
