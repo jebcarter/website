@@ -30,7 +30,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Verdana;
-  box-shadow: 0px -40px 30px powderblue inset;
+  box-shadow: 0px -50px 30px powderblue inset;
 }
 .buttonpagelinks {
   display: inline-block;
@@ -84,9 +84,9 @@ body {
 .pagetitle {
   font-size: 400%;
   text-align: left;
-  padding: 120px;
+  padding: 100px;
   color: black;
-  text-shadow: 0px 0px 7px white;
+  text-shadow: 0px 0px 10px white;
 }
 p {
   font-size: 120%;
