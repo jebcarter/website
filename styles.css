@@ -1,7 +1,6 @@
 body {
   background-color: powderblue;
   font-family: Times;
-  text-indent: 50px;
 }
 .midpage {
     font-size: 150%;
@@ -141,5 +140,5 @@ div {
   background-repeat: no-repeat;
 }
 p {
-  text-indent: 50px;
+  text-indent: 70px;
 }
