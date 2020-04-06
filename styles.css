@@ -27,7 +27,6 @@ body {
   background-image: url("/images/gears.jpg");
   height: 320px;
   background-position: relative;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0px -50px 40px powderblue inset;
