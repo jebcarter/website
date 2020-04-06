@@ -103,6 +103,7 @@ h4 {
 }
 .blackbackground {
   background-color: black;
+  border-radius: 5px;
 }
 p {
   font-size: 120%;
