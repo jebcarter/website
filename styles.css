@@ -44,7 +44,7 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px #f6f4f1 inset;
+  box-shadow: 0px -20px 20px #f6f4f1 inset;
 }
 .code-image {
   background-image: url("/images-videos/Headers/computercode.jpg");
@@ -53,7 +53,7 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px #f6f4f1 inset;
+  box-shadow: 0px -20px 20px #f6f4f1 inset;
 }
 .music-image {
   background-image: url("/images-videos/Headers/guitar.jpg");
@@ -62,7 +62,7 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px #f6f4f1 inset;
+  box-shadow: 0px -20px 20px #f6f4f1 inset;
 }
 .buttonpagelinks {
   display: inline-block;
