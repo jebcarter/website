@@ -2,11 +2,11 @@ body {
   background-color: powderblue;
   font-family: Times;
 }
-.buttons {
-    font-size: 150%;
-    text-align: center;
+div.sticky {
     position: -webkit-sticky;
     position: sticky;
+    font-size: 150%;
+    text-align: center;
     background-color: #f6f4f1;
     border-bottom-style: solid;
     border-width: thick;
