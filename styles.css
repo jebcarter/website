@@ -1,5 +1,5 @@
 body {
-  background-color: powderblue;
+  background-color: #f6f4f1;
   font-family: Times;
 }
 div.sticky {
@@ -10,7 +10,7 @@ div.sticky {
     font-size: 150%;
     opacity: 100%;
     text-align: center;
-    background-color: #f6f4f1;
+    background-color: #0C090A;
     border-bottom-style: solid;
     border-width: thick;
     width: 100%;
@@ -20,13 +20,13 @@ div.sticky {
 }
 .nassau-image {
   background-image: url("/images-videos/Headers/nassau_hall.jpg");
-  background-color: #f6f4f1;
+  background-color: #0C090A;
   height: 320px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -40px 20px #f6f4f1 inset;
+  box-shadow: 0px -40px 20px #0C090A inset;
 }
 .profilepic {
   display: block;
@@ -44,7 +44,7 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px powderblue inset;
+  box-shadow: 0px -50px 40px #f6f4f1 inset;
 }
 .code-image {
   background-image: url("/images-videos/Headers/computercode.jpg");
@@ -53,7 +53,7 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px powderblue inset;
+  box-shadow: 0px -50px 40px #f6f4f1 inset;
 }
 .music-image {
   background-image: url("/images-videos/Headers/guitar.jpg");
@@ -62,11 +62,11 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -50px 40px powderblue inset;
+  box-shadow: 0px -50px 40px #f6f4f1 inset;
 }
 .buttonpagelinks {
   display: inline-block;
-  background-color: #f44336;
+  background-color: #ff3a22;
   border-radius: 20px;
   border-width: thin;
   color: white;
@@ -136,25 +136,45 @@ h4 {
 .bottomtext {
   font-size: 80%;
   text-align: center;
+  color: #0C090A
 }
 .bodytext {
   font-size: 120%;
   position: relative;
   text-align: left;
-  right: 15%;
-  left: 15%;
-  width: 70%
+  right: 8%;
+  left: 8%;
+  width: 84%
 }
 ul {
   font-size: 160%;
   position: relative;
   text-align: left;
-  right: 15%;
-  left: 15%;
-  width: 70%
+  right: 8%;
+  left: 8%;
+  width: 84%
 }
-div {
-  background-repeat: no-repeat;
+div.main1 {
+  background-color: #98AFC7;
+  position: relative;
+  text-align: left;
+  right: 8%;
+  left: 8%;
+  width: 84%;
+  padding: 10px 0px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+div.main2 {
+  background-color: #C7B097;
+  position: relative;
+  text-align: left;
+  right: 8%;
+  left: 8%;
+  width: 84%;
+  padding: 10px 0px;
+  border-radius: 30px;
+  margin-top: 20px;
 }
 .name {
   margin-top: -60px;
