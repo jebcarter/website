@@ -166,17 +166,14 @@ figure.video {
 figcaption {
   font-size: 120%;
 }
-div.3column {
+figure.sidebyside3 {
   display: inline-block;
-  background-color: green;
+  float: left;
   width: 33%;
-}
-div.2column {
-  display: inline-block;
-  background-color: green;
-  width: 50%;
+  background-color: lightgrey;
 }
 div.row {
+  display: flex;
   background-color: silver;
   margin-left: 8%;
   width: 84%;
