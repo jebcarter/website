@@ -10,6 +10,7 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 12px;
 }
 .profilepic {
   display: block;
@@ -55,7 +56,7 @@ figure.rightmedium {
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 20px;
-  margin-left: 70px;
+  margin-left: 80px;
   background-color: silver;
   text-align: center;
 }
@@ -218,9 +219,13 @@ div.main2 {
 }
 .name {
   margin-top: -27px;
-  margin-bottom: -35px;
+  margin-bottom: -20px;
+  padding-top: 5px;
+  height: 130px;
   width: 100%;
   line-height: 90px;
+  background-color: #0C090A;
+  border-radius: 12px;
 }
 p {
   text-indent: 40px;
