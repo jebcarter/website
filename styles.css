@@ -139,21 +139,16 @@ figcaption {
   font-size: 120%;
 }
 div.3column {
-  display: block;
   float: left;
   width: 32%;
   padding: .66%;
   background-color: silver;
-  border-style: solid;
-  border-radius: 4px;
 }
 div.2column {
   float: left;
   width: 49%;
   padding: .49%;
   background-color: silver;
-  border-style: solid;
-  border-radius: 4px;
 }
 div.row {
   background-color: silver;
