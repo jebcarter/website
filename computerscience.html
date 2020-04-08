@@ -114,7 +114,7 @@
     <div class="main1">
       <h3 id="KnightTrap">The Knight Trapping Problem</h3>
       <p class="bodytext">
-        This algorithm is inspired by
+        This project is inspired by
         <a href="https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A" title="Go to Numberphile Channel"
         target="_blank">Numberphile's</a>
         YouTube video entitled
@@ -164,6 +164,7 @@
         the knight will not visit that square and hence will not become trapped
         at that particular square on the next trial. Instead, the knight bypasses
         all previously discovered trapping squares and gets trapped at the next one.
+        <br><br><br><br>
       </p>
       <figure class="video">
         <video width="500" height="500" controls autoplay>
@@ -214,13 +215,13 @@
     <div class="main2">
       <h3 id="8Puzzle">The Sliding Puzzle Solver</h3>
       <p class="bodytext">
-        I built this project as part of the course COS 226, Algorithms and Data
-        Structures, at Princeton University.
+        I built this project as part of the course COS 226, <i>Algorithms and Data
+        Structures</i>, at Princeton University.
       </p>
       <figure class="rightsmall">
         <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_2x2-06.gif" width="200" height="200"
         alt="2x2 Sliding Puzzle">
-        <figcaption>Simple 2x2 Sliding Puzzle</figcaption>
+        <figcaption>2x2 Sliding Puzzle</figcaption>
       </figure>
       <p class="bodytext">
         The Sliding Puzzle is one of the most popular handheld puzzles
@@ -282,17 +283,79 @@
 <!---------------------------------------------------------------------------->
 
     <div class="main1">
-      <h3 id="Recursive">Making Recursive Artwork</h3>
+      <h3 id="Recursive">Recursive Artwork</h3>
       <p class="bodytext">
-        Filler
+        I built this project as part of the course COS 126, <i>Computer Science: An
+        Interdisciplinary Approach</i>, at Princeton University.
       </p>
+      <figure class="rightsmall">
+        <img src="/images-videos/Recursion/Sierpinski.png" width="200" height="200"
+        alt="Sierpinski's Triangle">
+        <figcaption>Sierpinski's Triangle</figcaption>
+      </figure>
+      <p class="bodytext">
+        This project was an experiment in using computation and geometry to create
+        fractals digitally. The inspiration for all of the fractal artwork contained
+        herein was the Sierpinski Triangle (right). This famous fractal, named after
+        mathematician and number theorist Waclaw Sierpinski, consists of one large
+        equilateral triangle containing three smaller equilateral triangles, each containing
+        three triangles of their own, and so on. This 'multiplicative' property of Sierpinski's
+        Triangle is what makes recursive functions such a useful tool for creating art
+        similar to Sierpinski's.
+      </p>
+      <p class="bodytext">
+        To create fractal artwork inspired by Sierpinski's Triangle, I used recursive
+        functions in Java in conjuction with Princeton standard libraries (for drawing).
+        The general structure of the algorithm is this: call a function that draws
+        a particular shape or icon. However, before that function returns, have it
+        recursively call <i>itself</i> multiple times with new position and size parameters
+        for the drawing. Repeat this layered recursion 5-8 times (any more and the program
+        starts to time out), each time drawing a smaller and smaller version of the
+        same shape or icon in positions relative to their 'parent.' Depending on the
+        choice of the initial shape and subsequent positioning of recursive children,
+        a wide variety of fractals can form. Some of the more interesting and/or
+        beautiful pieces that I created are shown below:
+      </p>
+      <div class="row">
+        <div class="3column">
+          <img src="/images-videos/Recursion/Recursion_Random_Spiral1.png" alt="Raindow Spiral 1" style="width:100%">
+        </div>
+        <div class="3column">
+          <img src="/images-videos/Recursion/Recursion_Octagon.png" alt="Nested Octagon" style="width:100%">
+        </div>
+        <div class="3column">
+          <img src="/images-videos/Recursion/Recursion_Random_Spiral2.png" alt="Raindow Spiral 2" style="width:100%">
+        </div>
+      </div>
+      <div class="row">
+        <div class="2column">
+          <img src="/images-videos/Recursion/Recursion_Ghost.png" alt="Ghost Tree" style="width:100%">
+        </div>
+        <div class="2column">
+          <video width=50% controls autoplay>
+            <source src="/images-videos/Recursion/Recursion_Ghost.mp4"
+            type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </div>
+      </div>
     </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          NBody                                          ->
+<!---------------------------------------------------------------------------->
+
     <div class="main2">
       <h3 id="NBody">The NBody Problem</h3>
       <p class="bodytext">
         Filler
       </p>
     </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          Bouncing Balls                                 ->
+<!---------------------------------------------------------------------------->
+
     <div class="main1">
       <h3 id="Balls">Bouncing Balls</h3>
       <p class="bodytext">
