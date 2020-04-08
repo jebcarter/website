@@ -56,7 +56,21 @@ figure.rightmedium {
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
-  margin-left: 100px;
+  margin-left: 110px;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+}
+figure.rightlarge {
+  display: block;
+  float: right;
+  width: 400px;
+  height: 420px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 8%;
+  margin-left: 110px;
   background-color: silver;
   text-align: center;
   border-style: solid;
@@ -67,8 +81,8 @@ figure.video {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   margin-top: 1em;
   margin-bottom: 3em;
   text-align: center;
