@@ -89,8 +89,8 @@
         because a square that is becoming isolated from other unvisited squares will be filled
         according to the heuristic.
       </p>
-      <figure class="video">
-        <video width="500" height="500" controls autoplay>
+      <figure class="videomedium">
+        <video width="350" height="350" controls autoplay>
           <source src="/images-videos/Knight_Tour/Knight_Tour-15-10-12.mp4"
           type="video/mp4">
           Your browser does not support this video.
@@ -103,8 +103,14 @@
         Additionally, by my calculations, the fewest-squares heuristic is successful
         in finding a knight's tour over <b>95%</b> of the time for all boards smaller than <b>80 x 80</b>
         with the knight in <b>any</b> position. Once the size of the boards reaches the hundreds, the success
-        rate drops to around 50% and continues to fall as the sizes increase.
+        rate drops to around 50% and continues to fall as the sizes increase. A successful
+        tour on a board of size 150x150 is shown (below).
       </p>
+      <figure class="embedvideolarge">
+        <iframe src="https://drive.google.com/file/d/1M3BVXHqEayVxQCFajLCXtqfeS_c5nZlV/preview"
+        width="680" height="480" align="center" allowfullscreen></iframe>
+        <figcaption>150x150 Knight's Tour</figcaption>
+      </figure>
     </div>
 
 <!---------------------------------------------------------------------------->
@@ -164,9 +170,9 @@
         the knight will not visit that square and hence will not become trapped
         at that particular square on the next trial. Instead, the knight bypasses
         all previously discovered trapping squares and gets trapped at the next one.
-        <br><br><br>
+        <br><br>
       </p>
-      <figure class="video">
+      <figure class="videolarge">
         <video width="500" height="500" controls autoplay>
           <source src="/images-videos/Knight_Trap/Knight_Trap-8.mp4"
           type="video/mp4">
