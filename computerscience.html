@@ -12,6 +12,16 @@
         <h1 class="bubbletext">C O M P U T E R <br> S C I E N C E</h1>
       </div>
     </div>
+    <div class="sticky">
+      <button onclick="document.location = 'index.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Home </span></button>
+      <button onclick="document.location = 'engineering.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Engineering </span></button>
+      <button onclick="document.location = 'computerscience.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Computer Science </span></button>
+      <button onclick="document.location = 'music.html'" class="buttonpagelinks"
+      style="vertical-align:middle"><span>Music  </span></button>
+    </div>
     <div class="main1">
       <h2>Computer Science Experience</h2>
       <p class="bodytext">
@@ -31,7 +41,7 @@
         <ul>
           <li><a href="#KnightTour">The Knight's Tour</a></li>
           <li><a href="#KnightTrap">The Knight Trapping Problem</a></li>
-          <li><a href="#8Puzzle">The 8-Puzzle Solver</a></li>
+          <li><a href="#8Puzzle">The Slider Puzzle Solver</a></li>
           <li><a href="#Recursive">Recursive Artwork</a></li>
           <li><a href="#NBody">The NBody Problem</a></li>
           <li><a href="#Balls">Bouncing Balls</a></li>
@@ -39,6 +49,9 @@
       </p>
     </div>
 
+<!---------------------------------------------------------------------------->
+<!--                          Knight Tour                                    ->
+<!---------------------------------------------------------------------------->
 
     <div class="main2">
       <h3 id="KnightTour">The Knight's Tour</h3>
@@ -49,14 +62,15 @@
         puzzle, I became determined to solve it myself.
       </p>
       <figure class="rightmedium">
-        <img src="/images-videos/Knight_Tour/Knight_Tour-8-0-0.gif" width="300" height="320"
+        <img src="/images-videos/Knight_Tour/Knight_Tour-8-0-0.gif" width="300" height="300"
         alt="8x8 Knight's Tour">
         <figcaption>8x8 Knight's Tour</figcaption>
       </figure>
       <p class="bodytext">
         The problem seems, on the surface, incredibly daunting. My first strategy was to
         use a Mimimum Priority Queue, assigning a 'score' to every board based on the position
-        of the knight and the locations of remaining squares. However, this solution
+        of the knight and the locations of remaining squares. (This is the technique I used
+        to solve Sliding Puzzles, and it is described in greater detail in that section.) However, this solution
         only succeeded in finding valid knight's tours for boards 5x5 and smaller; anything
         larger would exceed the computer's memory capacity or take too long. This is
         because such a strategy requires that the program store all possible previous boards for
@@ -93,6 +107,9 @@
       </p>
     </div>
 
+<!---------------------------------------------------------------------------->
+<!--                          Knight Trap                                    ->
+<!---------------------------------------------------------------------------->
 
     <div class="main1">
       <h3 id="KnightTrap">The Knight Trapping Problem</h3>
@@ -118,17 +135,8 @@
         mechanics of a knight on a chess board. In this scenario, a knight is
         placed on an infinitely large chess board. The squares on this board are labeled in
         a very particular way. As shown in the diagram (right), the center
-        square is labeled #1, then the numbers increase in a spiral shape infinitely
-        outward. Initially, the knight is placed at square 1.
-      </p>
-      <p class="bodytext">
-        The knight (moves like a knight from chess) begins at the central square (#1)
-        and can move to any legal square (making an "L" shape). For example, a
-        knight at 1 could move to 10, 12, 14, 16, 18, 20, 22, or 24. The knight has
-        two movement constraints: It cannot visit a square it has already been to,
-        and it will always jump to the square with the smallest value. Once there,
-        the knight will again compare the squares' values of all legal moves, with
-        the exception of square #1, which it has already visited.
+        square is given the value (1), then the values increase in a spiral shape infinitely
+        outward. Initially, the knight is placed at square (1).
       </p>
       <figure class="rightlarge">
         <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="400" height="400"
@@ -136,13 +144,22 @@
         <figcaption>Discovery of the First Trapping Square</figcaption>
       </figure>
       <p class="bodytext">
+        The knight (moves like a knight from chess) begins at the central square (1)
+        and can move to any legal square (making an "L" shape). For example, a
+        knight at (1) could move to (10), (12), (14), (16), (18), (20), (22), or (24). The knight has
+        two movement constraints: It cannot visit a square it has already been to,
+        and it will always jump to the square with the smallest value. Once there,
+        the knight will again compare the squares' values of all legal moves, with
+        the exception of square (1), which it has already visited.
+      </p>
+      <p class="bodytext">
         This process continues until, at some point, the knight becomes 'trapped'.
         In this situation, the knight has already visited all 8 of the potential squares that
         it could legally jump to. A square where the knight becomes trapped is called
         a "trapping square." The first time the knight reaches one of these trapping squarres
-        is at square 2084. An animation of the knight discovering the first trapping square
+        is at square (2084). An animation of the knight discovering the first trapping square
         is shown (right). Once the knight reaches any 'trapping square,' the algorithm resets,
-        returns the knight to square 1, and <u>marks all previously visited trapping squares
+        returns the knight to square (1), and <u>marks all previously visited trapping squares
         as "already visited."</u> Because the trapping square is marked as "already visited",
         the knight will not visit that square and hence will not become trapped
         at that particular square on the next trial. Instead, the knight bypasses
@@ -158,23 +175,112 @@
       </figure>
       <p class="bodytext">
         By repeating trials of increasing size, the algorithm produces a series of integers,
-        which are the numbers of the squares at which the knight is trapped in each successive
+        which are the values associated with the trapping squares in each successive
         trial. I have run my knight trapping algorithm for the first 4000 trapping squares.
         Within the first 4000, the farthest trapping square discovered has a staggering value
-        of 10,486,083. A complete list of the first 4000 trapping squares can be found
-        <a href="trappingsquares.html">here</a>.
+        of (10,486,083). A complete list of the first 4000 trapping square values can be found
+        <a href="trappingsquares.html">here</a>. Plotting the value of the trapping
+        squares against the order in which they are discovered yields the following
+        plot:
+      </p>
+      <figure class="middlewide">
+        <img src="/images-videos/Knight_Trap/Trapping_Squares_Graph.png" width="700" height="370"
+        alt="Trapping Squares Graph">
+        <figcaption>Graph of Trapping Values vs Order of Discovery</figcaption>
+      </figure>
+      <p class="bodytext">
+        Interestingly, the values of the trapping squares seem to increase linearly
+        as the knight explores farther from the center. Though a linear relationship
+        is not all that surprising, it is by no means a given! The size of the spirals
+        increases as the square of the radius, by virtue of the nature of the puzzle, and
+        there isn't any clear, logical intuition suggesting that the relationship would
+        be linear, so the fact that it is linear is incredibly interesting! (I actually
+        would have guessed that it'd be logarithmic.) Another interesting observation
+        is that the trapping squares remain relatively dense even at very large values.
+        If this pattern does, in fact, continue indefinitely, then one would expect this
+        series of values to be an <b>infinite</b> series. Although it's rather predicable
+        that the number of trapping squares is (probably) infinite, it isn't necessarily
+        guaranteed. It's technically possible that there is a finite number of trapping
+        squares, but I find it incredibly unlikely, especially given the data above. Perhaps
+        a mathematician with expertise in proofs and map theory could prove my conjecture
+        that the series is infinite, but I'm afraid that's a bit above my pay grade!
       </p>
     </div>
 
-
-
+<!---------------------------------------------------------------------------->
+<!--                          Sliding Puzzle                                 ->
+<!---------------------------------------------------------------------------->
 
     <div class="main2">
-      <h3 id="8Puzzle">The 8-Puzzle Solver</h3>
+      <h3 id="8Puzzle">The Sliding Puzzle Solver</h3>
       <p class="bodytext">
-        Filler
+        I built this project as part of the course COS 226, Algorithms and Data
+        Structures, at Princeton University.
       </p>
+      <figure class="rightsmall">
+        <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_2x2-06.gif" width="200" height="200"
+        alt="2x2 Sliding Puzzle">
+        <figcaption>Simple 2x2 Sliding Puzzle</figcaption>
+      </figure>
+      <p class="bodytext">
+        The Sliding Puzzle is one of the most popular handheld puzzles
+        in circulation. The task is simple: You are given a grid of squares, all
+        filled in with the exception of one empty slot. These squares can slide past one
+        another, and it is your job to put them in order from left to right and top
+        to bottom, using only the one empty slot to move the squares around. A very simple
+        example of a small 2x2 sliding puzzle is shown (right). Given enough
+        time and moves, most people can solve a sliding puzzle, though they may struggle
+        with larger ones. Nevertheless, my algorithm is designed to find the solution
+        to any puzzle up to 5x5 in size in the shortest possible number of moves.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_3x3-31.gif" width="300" height="300"
+        alt="3x3 Sliding Puzzle">
+        <figcaption>3x3 Sliding Puzzle</figcaption>
+      </figure>
+      <p class="bodytext">
+        In order to find the solution to slider puzzles, I used the
+        <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* Search Algorithm</a>
+        with a Minimum Priority Queue. I defined a "search node" as a board, the number of moves
+        made to reach it, and a reference to the previous node. Additionally, every board
+        is assigned a "priority function," or a value that describes how worthwhile
+        that board is to explore. The priority function I chose, known widely as the
+        "Manhattan Priority Function," is given by the number of moves made to reach
+        that board plus the "Manhattan Distance" of that board, where the Manhattan Distance is
+        the sum of the vertical and horizontal distances from each tile to its
+        solved location. This priority function gives lower values to boards which were
+        reached in fewer moves and boards that are closer to the solution. Additionally, the Manhattan
+        function of any board is always greater than or equal to the shortest possible number
+        of steps needed to solve it from start to finish.
+      </p>
+      <figure class="rightlarge">
+        <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_34.gif" width="400" height="400"
+        alt="4x4 Sliding Puzzle">
+        <figcaption>4x4 Sliding Puzzle</figcaption>
+      </figure>
+      <p class="bodytext">
+        As given by the A* Search Algorithm, the board with the lowest priority value is removed
+        from the queue, the priority functions of all of its "children" (boards that can be
+        reached in one move) are calculated, and the children are added back into to the queue.
+        Once a board is removed from the queue which is equal to the final solution,
+        you are guaranteed that you have found the shortest possible solution. This is because
+        of the nature of the Manhattan Priority Function. At the moment it is removed from
+        the queue, the solved board has the smallest priority function of all
+        existing boards. Because all Manhattan Functions are greater than or equal to
+        the solving distance, and because all <b>remaining</b> Manhattan Functions are larger
+        than the solution just discovered, the found solution must be the quickest one.
+      </p>
+      <figure class="middlelarge">
+        <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_44.gif" width="500" height="500"
+        alt="5x5 Sliding Puzzle">
+        <figcaption>5x5 Sliding Puzzle</figcaption>
+      </figure>
     </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          Recursive Artwork                              ->
+<!---------------------------------------------------------------------------->
+
     <div class="main1">
       <h3 id="Recursive">Making Recursive Artwork</h3>
       <p class="bodytext">

@@ -4,7 +4,7 @@
 
 .nassau-image {
   background-image: url("/images-videos/Headers/nassau_hall.jpg");
-  background-color: #f6f4f1;
+  background-color: #0C090A;
   height: 320px;
   background-position: center;
   position: relative;
@@ -23,40 +23,60 @@
 }
 .gears-image {
   background-image: url("/images-videos/Headers/gears.jpg");
+  background-color: #0C090A;
   height: 320px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -20px 20px #f6f4f1 inset;
+  border-radius: 12px;
+  margin-bottom: -16px;
 }
 .code-image {
   background-image: url("/images-videos/Headers/computercode.jpg");
+  background-color: #0C090A;
   height: 320px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -20px 20px #f6f4f1 inset;
+  border-radius: 12px;
+  margin-bottom: -16px;
 }
 .music-image {
   background-image: url("/images-videos/Headers/guitar.jpg");
+  background-color: #0C090A;
   height: 320px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px -20px 20px #f6f4f1 inset;
+  border-radius: 12px;
+  margin-bottom: -16px;
+}
+figure.rightsmall {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 235px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 8%;
+  margin-left: 120px;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
 }
 figure.rightmedium {
   display: block;
   float: right;
   width: 300px;
-  height: 320px;
+  height: 335px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
-  margin-left: 110px;
+  margin-left: 120px;
   background-color: silver;
   text-align: center;
   border-style: solid;
@@ -66,11 +86,39 @@ figure.rightlarge {
   display: block;
   float: right;
   width: 400px;
-  height: 420px;
+  height: 435px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
-  margin-left: 110px;
+  margin-left: 120px;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+}
+figure.middlewide {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 400px;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+}
+figure.middlelarge {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 530px;
+  margin-top: 1em;
+  margin-bottom: 3em;
   background-color: silver;
   text-align: center;
   border-style: solid;
@@ -110,6 +158,7 @@ div.sticky {
     left: 8%;
     right: 8%;
     border-radius: 12px;
+    margin-bottom: 60px;
 }
 .buttonpagelinks {
   display: inline-block;
@@ -184,7 +233,7 @@ h4 {
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 10%;
+  top: 7%;
   color: white;
 }
 .bubbletext {
@@ -237,10 +286,10 @@ div.main2 {
   margin-top: 20px;
 }
 .name {
-  margin-top: -27px;
-  margin-bottom: -20px;
+  margin-top: -32px;
+  margin-bottom: -80px;
   padding-top: 5px;
-  height: 130px;
+  height: 180px;
   width: 100%;
   line-height: 90px;
   background-color: #0C090A;
