@@ -196,6 +196,14 @@ figure.sidebyside3 {
   margin: 3px;
   border-radius: 5px;
 }
+figure.sidebyside2 {
+  display: inline-block;
+  float: left;
+  width: 49%;
+  background-color: lightgrey;
+  margin: 3px;
+  border-radius: 5px;
+}
 div.row {
   display: flex;
   background-color: #f6f4f1;

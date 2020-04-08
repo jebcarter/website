@@ -43,7 +43,7 @@
           <li><a href="#KnightTrap">The Knight Trapping Problem</a></li>
           <li><a href="#8Puzzle">The Slider Puzzle Solver</a></li>
           <li><a href="#Recursive">Recursive Artwork</a></li>
-          <li><a href="#NBody">The NBody Problem</a></li>
+          <li><a href="#NBody">The N-Body Problem</a></li>
           <li><a href="#Balls">Bouncing Balls</a></li>
         </ul>
       </p>
@@ -357,14 +357,70 @@
     </div>
 
 <!---------------------------------------------------------------------------->
-<!--                          NBody                                          ->
+<!--                          N-Body                                         ->
 <!---------------------------------------------------------------------------->
 
     <div class="main2">
-      <h3 id="NBody">The NBody Problem</h3>
+      <h3 id="NBody">The N-Body Problem</h3>
+      <figure class="rightsmall">
+        <img src="/images-videos/NBody/NBody_Simple.gif" width="200" height="200"
+        alt="Simple 4 Planet System">
+        <figcaption>Simple 4 Planet System</figcaption>
+      </figure>
       <p class="bodytext">
-        Filler
+        I built this project as part of the course COS 126, <i>Computer Science: An
+        Interdisciplinary Approach</i>, at Princeton University.
       </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/NBody/NBody_Binary.gif" width="200" height="200"
+        alt="Binary Star System">
+        <figcaption>Binary Star System</figcaption>
+      </figure>
+      <p class="bodytext">
+        The N-Body Problem is the problem of predicting the motion of N astronomical
+        bodies subject to the forces of gravity between them. Solving this problem is
+        not particularly difficult for small systems with only a few bodies. An example
+        of such a simple system is shown (right), where only 5 bodies exist in perfectly
+        circular orbits. However, the problem becomes incredibly complicated to calculate once large numbers of bodies
+        are involved. For this project, rather than algebraically solve for the equations of motion for
+        an arbitrarily large system, I sought to solve the N-Body problem computationally, instead.
+      </p>
+      <figure class="leftmedium">
+        <img src="/images-videos/NBody/NBody_Figure8.gif" width="200" height="200"
+        alt="Figure 8 System">
+        <figcaption>Figure 8 System</figcaption>
+      </figure>
+      <p class="bodytext">
+        To do this, I treated the passage of time as a series of very short time steps and calculated
+        the changes in trajectories at each step. Given the initial positions, velocities, and masses
+        of any number of bodies, my algorithm uses Newton's Law of Universal Gravitation,
+        <img src="/images-videos/NBody/Gravity_Equation.jpg" alt="Newton's Law of Universal Gravity"
+        width="5em" height="1em" style="display: inline">,
+        to calculate the force on each body due to all others, the subsequent
+        acceleration due to that force, and the change in velocity over a
+        short time step due to that acceleration. This new velocity is used to determine
+        the new position of each body. This process repeats for each small time step,
+        and the results are animated to illustrate the motion of the bodies over time.
+        The results of these long simulations, given the right initial conditions,
+        can be incredible beautiful and interesting. A few of the most interesting
+        simulations are shown (below).
+      </p>
+      <div class="row">
+        <figure class="sidebyside2">
+          <video width=100% controls autoplay>
+            <source src="/images-videos/NBody/NBody_Spiral.mp4"
+            type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </figure>
+        <figure class="sidebyside2">
+          <video width=100% controls autoplay>
+            <source src="/images-videos/NBody/NBody_ChaosBlossom.mp4"
+            type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </figure>
+      </div>
     </div>
 
 <!---------------------------------------------------------------------------->
