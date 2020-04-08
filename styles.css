@@ -171,12 +171,16 @@ figure.sidebyside3 {
   float: left;
   width: 33%;
   background-color: lightgrey;
+  margin: 5px;
+  border-radius: 5px;
 }
 div.row {
   display: flex;
-  background-color: silver;
+  background-color: #f6f4f1;
   margin-left: 8%;
   width: 84%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 /*------------------------------------------------------*/
