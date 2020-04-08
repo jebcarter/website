@@ -51,11 +51,11 @@
 figure.rightmedium {
   display: block;
   float: right;
-  width: 150px;
-  height: 170px;
+  width: 250px;
+  height: 270px;
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-right: 20px;
+  margin-right: 8%;
   margin-left: 80px;
   background-color: silver;
   text-align: center;
