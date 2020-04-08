@@ -167,10 +167,12 @@ figcaption {
   font-size: 120%;
 }
 div.3column {
+  position: relative;
   flex: 33.33%;
   padding: 5px;
 }
 div.2column {
+  position: relative;
   flex: 50%;
   padding: 5px;
 }
