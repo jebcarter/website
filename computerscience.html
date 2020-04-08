@@ -41,7 +41,52 @@
     <div class="main2">
       <h3 id="KnightTour">The Knight's Tour</h3>
       <p class="bodytext">
-        Filler
+        The Knight's Tour is a famous, centuries-old puzzle which asks one question:
+        How can a Knight navigate a chess board such that it visits every square
+        exactly once? I love the game of chess so, naturally, when I learned about this
+        puzzle, I became determined to solve it myself.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Knight-Tour/Knight_Tour-8-0-0.gif" alt="8x8 Knight's Tour">
+        <figcaption>8x8 Knight's Tour</figcaption>
+      </figure>
+      <p class="bodytext">
+        The problem seems, on the surface, incredibly daunting. My first strategy was to
+        use a Mimimum Priority Queue, assigning a 'score' to every board based on the position
+        of the knight and the locations of remaining squares. However, this solution
+        only succeeded in finding valid knight's tours for boards 5x5 and smaller; anything
+        larger would exceed the computer's memory capacity or take too long. This is
+        because such a strategy requires that the program store all possible previous boards for
+        later retrieval, something that isn't feasible once the paths get very long.
+      </p>
+      <p class="bodytext">
+        I realized that, to solve the problem for larger boards, I needed to develop a heuristic
+        that would inform the decision of the knight at each move, but not require it to
+        consider all possible paths. Choosing this heuristic was incredibly important, as it
+        would determine the success of the program. After quite a bit of trial and error,
+        I settled on the final, and ultimately successful, heuristic: When choosing the next square
+        for the knight, choose the square which will give the knight the fewest available
+        moves. Logically, this heuristic makes sense: it's in the knight's interest to keep
+        its path compact and fill holes in otherwise visited space. This strategy minimizes
+        the creation of 'islands' (unvisited squares to which there are no valid routes)
+        because a square that is becoming isolated from other unvisited squares will be filled
+        according to the heuristic.
+      </p>
+      <figure class="video">
+        <video width="300" height="300" autoplay>
+          <source src="/images-videos/Knight-Tour/Knight_Tour-15-10-12.mp4"
+          type="video/mp4">
+          Your browser does not support this video.
+        </video>
+        <figcaption>15x15 Knight's Tour</figcaption>
+      </figure>
+      <p class="bodytext">
+        Compared to my first attempt, the fewest-squares heuristic is superior by orders
+        of magnitude. It minimizes the required memory and solves the puzzle in linear time.
+        Additionally, by my calculations, the fewest-squares heuristic is successful
+        in finding a knight's tour over <b>95%</b> of the time for all boards smaller than <b>80 x 80</b>
+        with the knight in <b>any</b> position. Once the size of the boards reaches the hundreds, the success
+        rate drops to around 50% and continues to fall as the sizes increase.
       </p>
     </div>
     <div class="main1">

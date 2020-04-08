@@ -1,23 +1,7 @@
-body {
-  background-color: #f6f4f1;
-  font-family: Times;
-}
-div.sticky {
-    z-index: 100;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    font-size: 150%;
-    opacity: 100%;
-    text-align: center;
-    background-color: #0C090A;
-    border-bottom-style: solid;
-    border-width: thick;
-    width: 100%;
-    left: 8%;
-    right: 8%;
-    border-radius: 12px;
-}
+/*------------------------------------------------------*/
+/*            IMAGES                                    */
+/*------------------------------------------------------*/
+
 .nassau-image {
   background-image: url("/images-videos/Headers/nassau_hall.jpg");
   background-color: #f6f4f1;
@@ -26,7 +10,6 @@ div.sticky {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  /* box-shadow: 0px -10px 15px #f6f4f1 inset; */
 }
 .profilepic {
   display: block;
@@ -63,6 +46,50 @@ div.sticky {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0px -20px 20px #f6f4f1 inset;
+}
+figure.rightmedium {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 200px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 20px;
+  margin-left: 70px;
+  background-color: silver;
+  text-align: center;
+}
+figure.video {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 400px;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  text-align: center;
+}
+
+/*------------------------------------------------------*/
+/*            BUTTONS                                   */
+/*------------------------------------------------------*/
+
+div.sticky {
+    z-index: 100;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-size: 150%;
+    opacity: 100%;
+    text-align: center;
+    background-color: #0C090A;
+    border-bottom-style: solid;
+    border-width: thick;
+    width: 100%;
+    left: 8%;
+    right: 8%;
+    border-radius: 12px;
 }
 .buttonpagelinks {
   display: inline-block;
@@ -105,21 +132,33 @@ div.sticky {
   opacity: 1;
   right: 0;
 }
+
+/*------------------------------------------------------*/
+/*            TEXT                                      */
+/*------------------------------------------------------*/
+
+body {
+  background-color: #f6f4f1;
+}
 h1 {
   font-size: 450%;
+  font-family: Tahoma, Impact, sans-serif;
 }
 h2 {
   font-size: 200%;
   text-align: center;
   text-decoration: underline;
+  font-family: Garamond, Palatino, serif;
 }
 h3 {
   font-size: 170%;
   text-align: center;
+  font-family: Garamond, Palatino, serif;
 }
 h4 {
   font-size: 140%;
   text-align: center;
+  font-family: Garamond, Palatino, serif;
 }
 .pagetitle {
   text-align: center;
@@ -129,7 +168,7 @@ h4 {
   color: white;
 }
 .bubbletext {
-  font-family: sans-serif;
+  font-family: Tahoma, Arial Black, sans-serif;
   color: white;
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
@@ -139,7 +178,7 @@ h4 {
   color: #0C090A
 }
 .bodytext {
-  font-size: 120%;
+  font-size: 130%;
   position: relative;
   text-align: left;
   right: 8%;
@@ -148,6 +187,7 @@ h4 {
 }
 ul {
   font-size: 160%;
+  font-family: Candara, Verdana, sans-serif;
   position: relative;
   text-align: left;
   right: 8%;
@@ -177,11 +217,12 @@ div.main2 {
   margin-top: 20px;
 }
 .name {
-  margin-top: -26px;
+  margin-top: -27px;
   margin-bottom: -35px;
   width: 100%;
   line-height: 90px;
 }
 p {
-  text-indent: 70px;
+  text-indent: 40px;
+  font-family: Candara, Verdana, sans-serif;
 }
