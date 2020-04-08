@@ -166,9 +166,15 @@ figure.video {
 figcaption {
   font-size: 120%;
 }
-div.column {
+div.3column {
   display: inline-block;
   background-color: green;
+  width: 33%;
+}
+div.2column {
+  display: inline-block;
+  background-color: green;
+  width: 50%;
 }
 div.row {
   background-color: silver;
