@@ -38,16 +38,18 @@
         </ul>
       </p>
     </div>
+
+
     <div class="main2">
       <h3 id="KnightTour">The Knight's Tour</h3>
       <p class="bodytext">
-        The Knight's Tour is a famous, centuries-old puzzle which asks one question:
-        How can a Knight navigate a chess board such that it visits every square
+        The Knight's Tour is a famous, centuries-old chess puzzle which asks one question:
+        How can a Knight (from the game of chess) navigate a chess board such that it visits every square
         exactly once? I love the game of chess so, naturally, when I learned about this
         puzzle, I became determined to solve it myself.
       </p>
       <figure class="rightmedium">
-        <img src="/images-videos/Knight_Tour/Knight_Tour-8-0-0.gif" width="250" height="250"
+        <img src="/images-videos/Knight_Tour/Knight_Tour-8-0-0.gif" width="300" height="320"
         alt="8x8 Knight's Tour">
         <figcaption>8x8 Knight's Tour</figcaption>
       </figure>
@@ -90,12 +92,80 @@
         rate drops to around 50% and continues to fall as the sizes increase.
       </p>
     </div>
+
+
     <div class="main1">
       <h3 id="KnightTrap">The Knight Trapping Problem</h3>
       <p class="bodytext">
-        Filler
+        This algorithm is inspired by
+        <a href="https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A" title="Go to Numberphile Channel"
+        target="_blank">Numberphile's</a>
+        YouTube video entitled
+        <a href="https://www.youtube.com/watch?v=RGQe8waGJ4w&t=62s" title="Go to Video"
+        target="_blank">"The Trapped Knight"</a>.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Knight_Trap/Knight_Trap_Number_Label.jpg" width="300" height="320"
+        alt="Spiral Labeling">
+        <figcaption>Spiral Labeling of Board</figcaption>
+      </figure>
+      <p class="bodytext">
+        The Knight Trapping Algorithm computes a unique, infinite sequence of numbers given by
+        the following problem:
+      </p>
+      <p class="bodytext">
+        The Knight Trapping Problem is another fascinating problem involving the
+        mechanics of a knight on a chess board. In this scenario, a knight is
+        placed on an infinitely large chess board. The squares on this board are labeled in
+        a very particular way. As shown in the diagram (right), the center
+        square is labeled #1, then the numbers increase in a spiral shape infinitely
+        outward. Initially, the knight is placed at square 1.
+      </p>
+      <p class="bodytext">
+        The knight (moves like a knight from chess) begins at the central square (#1)
+        and can move to any legal square (making an "L" shape). For example, a
+        knight at 1 could move to 10, 12, 14, 16, 18, 20, 22, or 24. The knight has
+        two movement constraints: It cannot visit a square it has already been to,
+        and it will always jump to the square with the smallest value. Once there,
+        the knight will again compare the squares' values of all legal moves, with
+        the exception of square #1, which it has already visited.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="300" height="320"
+        alt="First Trapping Square gif">
+        <figcaption>Discovery of the First Trapping Square</figcaption>
+      </figure>
+      <p class="bodytext">
+        This process continues until, at some point, the knight becomes 'trapped'.
+        In this situation, the knight has already visited all 8 of the potential squares that
+        it could legally jump to. A square where the knight becomes trapped is called
+        a "trapping square." The first time the knight reaches one of these trapping squarres
+        is at square 2084. An animation of the knight discovering the first trapping square
+        is shown (right). Once the knight reaches any 'trapping square,' the algorithm resets,
+        returns the knight to square 1, and <u>marks all previously visited trapping squares
+        as "already visited."</u> Because the trapping square is marked as "already visited",
+        the knight will not visit that square and hence will not become trapped
+        at that particular square on the next trial. Instead, the knight bypasses
+        all previously discovered trapping squares and gets trapped at the next one.
+      </p>
+      <figure class="video">
+        <video width="400" height="400" controls autoplay>
+          <source src="/images-videos/Knight_Trap/Knight_Trap-8.mp4"
+          type="video/mp4">
+          Your browser does not support this video.
+        </video>
+        <figcaption>Discovery of the First 8 Trapping Squares</figcaption>
+      </figure>
+      <p class="bodytext">
+        By repeating trials of increasing size, the algorithm produces a series of integers,
+        which are the numbers of the squares at which the knight is trapped in each successive
+        trial.
       </p>
     </div>
+
+
+
+
     <div class="main2">
       <h3 id="8Puzzle">The 8-Puzzle Solver</h3>
       <p class="bodytext">
