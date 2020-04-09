@@ -323,7 +323,7 @@ h4 {
 .bodytext {
   font-size: 130%;
   position: relative;
-  text-align: left;
+  text-align: justify;
   right: 8%;
   left: 8%;
   width: 84%
