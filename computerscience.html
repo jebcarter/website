@@ -424,8 +424,71 @@
     <div class="main1">
       <h3 id="Balls">Bouncing Balls</h3>
       <p class="bodytext">
-        Filler
+        The bouncing balls is a fun program that simulates N balls bouncing in
+        a closed 2-dimensional room subject to the force of gravity and collisions
+        with eachother and the walls. My process for creating this program went in
+        several stages, each progressing from the previous.
       </p>
+      <figure class="rightsmall">
+        <img src="/images-videos/Bouncing_Balls/dvd_logo.gif" width="200" height="200"
+        alt="Bouncing DVD Logo">
+        <figcaption>The Classic DVD Logo</figcaption>
+      </figure>
+      <p class="bodytext">
+        When I started, I wasn't actually planning to animate bouncing balls at all. Earlier
+        that day, I had been staring at the classic bouncing DVD logo (right) on my family
+        TV and was infuriated that the square never landed perfectly in the center. Driven mad by
+        ill-conceived rage, I decided that I would create <b>MY OWN</b> DVD logo that
+        would hit the corner <b>every single time</b> so that I could witness that
+        ever-satisfying perfect corner hit. (but also to spite the universe...) However,
+        with a little trigonometry, this problem turned out to be <i>very</i> easy. At that
+        point, I figured, "I built this, so I might as well use it for something interesting."
+        Thus, I added gravity so that the motion of the square would be a bit more
+        dynamic. I also replaced the square with a tennis ball because, let's face it,
+        everything is better when sports is involved!
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Bouncing_Balls/Bouncing_Balls-7.gif" width="300" height="300"
+        alt="7 Bouncing Balls">
+        <figcaption>7 Bouncing Balls</figcaption>
+      </figure>
+      <p class="bodytext">
+        From there, I decided to add a few more balls. I just had to convert my
+        position and velocity variables into arrays so that I could store data on
+        multiple balls at once. Pretty soon, I had 5 balls bouncing around my screen!
+        From there, I added a command-line input that would take an integer as the
+        number of balls and animate the requested number. Along with that change, I created a function
+        to scale-down the size of the balls as their numbers increased to prevent
+        them from crowding the screen with a giant mass of yellow-green. I also added a small
+        damping force to all wall collisions so that the balls would lose a bit of energy
+        with each bounce in an effort to make the simulation slightly more realistic. Because of
+        this damping force, the balls would eventually stop bouncing and just roll on the
+        ground, so I added a ball-return function to start them back up bouncing after
+        they'd run out of energy.
+      </p>
+      <p class="bodytext">
+        Unfortunately, the balls would just phase through each other instead of colliding,
+        and being the perfectionist that I am, I could not tolerate this. Thus, I adjusted
+        my code to account for mid-air collisions. This was more challenging
+        than the previous iterations, but it's this addition that makes my animation
+        so fun to watch. I had to check every ball's radial distance to all of its
+        neighbors and determine, based on their velocities relative to eachother, whether
+        or not they were colliding in that particular time step. If so, I had to
+        calculate the outcome velocities of an elastic collision between the balls
+        to determine the resulting trajectories. This addition reduced the
+        time-efficiency of my program from linear time to quadratic time, but this
+        change did not affect the performance of my animation because the number of balls
+        remained relatively small compared to the computing power of my device. With
+        this final addition, I set my program running and enjoyed the final product.
+      </p>
+      <figure class="videolarge">
+        <video width="500" height="500" controls autoplay>
+          <source src="/images-videos/Bouncing_Balls/200_Bouncing_Balls.mp4"
+          type="video/mp4">
+          Your browser does not support this video.
+        </video>
+        <figcaption>200 Bouncing Balls</figcaption>
+      </figure>
     </div>
 
     <p class="bottomtext">
