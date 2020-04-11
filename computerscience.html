@@ -164,12 +164,15 @@
         it could legally jump to. A square where the knight becomes trapped is called
         a "trapping square." The first time the knight reaches one of these trapping squarres
         is at square (2084). An animation of the knight discovering the first trapping square
-        is shown (right). Once the knight reaches any 'trapping square,' the algorithm resets,
-        returns the knight to square (1), and <u>marks all previously visited trapping squares
-        as "already visited."</u> Because the trapping square is marked as "already visited",
-        the knight will not visit that square and hence will not become trapped
-        at that particular square on the next trial. Instead, the knight bypasses
-        all previously discovered trapping squares and gets trapped at the next one.
+        is shown (right). In the Numberphile video upon which this project is based,
+        they stop there; since the knight is trapped, its path is over and 2084 is
+        the magical number where that occurs. However, I was interested in
+        whether or not the knight would get trapped <b>again</b> if it could continue
+        moving beyond square (2084). Thus, my algorithm was born. Once the knight reaches any
+        'trapping square,' it jumps backward a square to before it became trapped. (I made
+        sure to keep a running cache of all recent moves for this purpose). From there, the
+        knight continues past that trapping square until it gets trapped at a new one,
+        at which point this process repeats.
         <br><br>
       </p>
       <figure class="videolarge">
@@ -181,11 +184,15 @@
         <figcaption>Discovery of the First 8 Trapping Squares</figcaption>
       </figure>
       <p class="bodytext">
-        By repeating trials of increasing size, the algorithm produces a series of integers,
-        which are the values associated with the trapping squares in each successive
-        trial. I have run my knight trapping algorithm for the first 4000 trapping squares.
-        Within the first 4000, the farthest trapping square discovered has a staggering value
-        of (10,486,083). A complete list of the first 4000 trapping square values can be found
+        By exploring farther and farther out into the board, the algorithm produces a series of integers,
+        which are the values associated with each trapping square that the knight discovers.
+        I have run my knight trapping algorithm for the first 750,000 trapping squares.
+        Doing so required allocating my entire computer's 16GB of RAM to the task
+        simultaneously and allowing the program to run for nearly a half hour in
+        addition to several other optimizations. Within the first 750,000, the
+        farthest trapping square discovered has a staggering value of (1,960,428,482).
+        This value occurs at the 749,770-th trapping square.
+        A complete list of the first 750,000 trapping square values can be found
         <a href="trappingsquares.html">here</a>. Plotting the value of the trapping
         squares against the order in which they are discovered yields the following
         plot:
