@@ -39,13 +39,173 @@
         Below, I have highlighted some of my more notable/interesting computer science projects to date.
         Those detailed on this page include:
         <ul>
+          <li><a href="#KnightTrap">The Multiple Knight Trapping Problem</a></li>
           <li><a href="#KnightTour">The Knight's Tour</a></li>
-          <li><a href="#KnightTrap">The Knight Trapping Problem</a></li>
           <li><a href="#8Puzzle">The Slider Puzzle Solver</a></li>
           <li><a href="#Recursive">Recursive Artwork</a></li>
           <li><a href="#NBody">The N-Body Problem</a></li>
           <li><a href="#Balls">Bouncing Balls</a></li>
         </ul>
+      </p>
+    </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          Knight Trap                                    ->
+<!---------------------------------------------------------------------------->
+
+    <div class="main1">
+      <h3 id="KnightTrap">The Multiple Knight Trapping Problem</h3>
+      <figure class="rightlarge">
+        <img src="/images-videos/Knight_Trap/Knight_Trap_Number_Label.jpg" width="400" height="400"
+        alt="Spiral Labeling">
+        <figcaption>Spiral Labeling of Board</figcaption>
+      </figure>
+      <p class="bodytext">
+        This project is inspired by
+        <a href="https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A" title="Go to Numberphile Channel"
+        target="_blank">Numberphile's</a>
+        YouTube video entitled
+        <a href="https://www.youtube.com/watch?v=RGQe8waGJ4w&t=62s" title="Go to Video"
+        target="_blank">"The Trapped Knight"</a>.
+      </p>
+      <p class="bodytext">
+        As far as I know, I am the first person to investigate this puzzle in the way that
+        I have and the first to produce the infinite sequence of integers resulting from it.
+        <b>The following puzzle, its solution, and the analysis of its results are entirely
+        my own.</b> I call this problem The Multiple Knight Trapping Problem. The algorithm that
+        I created to solve it computes a unique, infinite sequence of numbers given by
+        the following problem:
+      </p>
+      <p class="bodytext">
+        The Knight Trapping Problem is a fascinating problem involving the
+        mechanics of a knight on a chess board. The problem presents the following scenario, a knight is
+        placed on an infinitely large chess board. The squares on this board are labeled in
+        a very particular way. As shown in the diagram (right), the center
+        square is given the value (1), then the values increase in a spiral shape infinitely
+        outward. Initially, the knight is placed at square (1).
+      </p>
+      <figure class="leftlarge">
+        <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="400" height="400"
+        alt="First Trapping Square gif">
+        <figcaption>Discovery of the First Trapping Square</figcaption>
+      </figure>
+      <p class="bodytext">
+        The knight (moves like a knight from chess) begins at the central square (1)
+        and can move to any legal square (making an "L" shape). For example, a
+        knight at (1) could move to (10), (12), (14), (16), (18), (20), (22), or (24). The knight has
+        two movement constraints: It cannot visit a square it has already been to,
+        and it will always jump to the square with the smallest value. Once there,
+        the knight will again compare the squares' values of all legal moves, with
+        the exception of square (1), which it has already visited.
+      </p>
+      <p class="bodytext">
+        This process continues until, at some point, the knight becomes 'trapped'.
+        In this situation, the knight has already visited all 8 of the potential squares that
+        it could legally jump to. A square where the knight becomes trapped is called
+        a "trapping square." The first time the knight reaches one of these trapping squares
+        is at square (2084). An animation of the knight discovering the first trapping square
+        is shown (right). In the Numberphile video upon which this project is based,
+        the problem stops there; since the knight is trapped, its path is over and 2084 is
+        the magical number where that occurs. However, I was interested in
+        whether or not the knight would get trapped <b>again</b> if it could continue
+        moving beyond square (2084). This is where the problem becomes a creation of my
+        own design and thus, my algorithm is born. Once the knight reaches any
+        'trapping square,' it jumps backward a square to before it became trapped. (I made
+        sure to keep a running cache of all recent moves for this purpose). From there, the
+        knight continues past that trapping square until it gets trapped at a new one,
+        at which point this process repeats.
+        <br><br>
+      </p>
+      <figure class="videomedium">
+        <video width="350" height="350" controls autoplay>
+          <source src="/images-videos/Knight_Trap/Knight_Trap-8.mp4"
+          type="video/mp4">
+          Your browser does not support this video.
+        </video>
+        <figcaption>Discovery of the First 8 Trapping Squares</figcaption>
+      </figure>
+      <p class="bodytext">
+        By exploring farther and farther out into the board, the algorithm produces a series of integers,
+        which are the values associated with each trapping square that the knight discovers.
+        I have run my knight trapping algorithm for the first 5,000,000 trapping squares.
+        Doing so required allocating my entire computer's 16GB of RAM to the task
+        simultaneously and allowing the program to run for several hours in
+        addition to a number of other optimizations. Within the first 5,000,000, the
+        farthest trapping square discovered has a staggering value of (13,224,016,918).
+        This value occurs at the 4,997,555-th trapping square.
+        A complete list of the first 5,000,000 trapping square values can be found here: <br>
+        <a href="/knight_trap_values/million1-1.html">Squares 1 - 500,000</a> |
+        <a href="/knight_trap_values/million1-2.html">Squares 500,001 - 1,000,000</a> |
+        <a href="/knight_trap_values/million2-1.html">Squares 1,000,001 - 1,500,000</a> |
+        <a href="/knight_trap_values/million2-2.html">Squares 1,500,001 - 2,000,000</a> |
+        <a href="/knight_trap_values/million3-1.html">Squares 2,000,001 - 2,500,000</a> |
+        <a href="/knight_trap_values/million3-2.html">Squares 2,500,001 - 3,000,000</a> |
+        <a href="/knight_trap_values/million4-1.html">Squares 3,000,001 - 3,500,000</a> |
+        <a href="/knight_trap_values/million4-2.html">Squares 3,500,001 - 4,000,000</a> |
+        <a href="/knight_trap_values/million5-1.html">Squares 4,000,001 - 4,500,000</a> |
+        <a href="/knight_trap_values/million5-2.html">Squares 4,500,001 - 5,000,000</a> <br>
+
+        Plotting the value of the trapping
+        squares against the order in which they are discovered yields the following
+        plot:
+      </p>
+      <figure class="middlewide">
+        <img src="/images-videos/Knight_Trap/Trapping_Squares_Graph.png" width="700" height="370"
+        alt="Trapping Squares Graph">
+        <figcaption>Graph of Trapping Values vs Order of Discovery</figcaption>
+      </figure>
+      <p class="bodytext">
+        Interestingly, the values of the trapping squares seem to increase linearly
+        as the knight explores farther from the center. Though a linear relationship
+        is not all that surprising, it is by no means a given! The size of the spirals
+        increases as the square of the radius, by virtue of the nature of the puzzle, and
+        there isn't any clear, logical intuition suggesting that the relationship would
+        be linear, so the fact that it is linear is very interesting! (I actually
+        would have guessed that it'd be logarithmic.) Another interesting observation
+        is that the trapping squares remain relatively dense even at very large values.
+        If this pattern does, in fact, continue indefinitely, then one would expect this
+        series of values to be an <b>infinite</b> series. Although it's rather predicable
+        that the number of trapping squares is (probably) infinite, it wasn't necessarily
+        guaranteed. It's technically possible that there is a finite number of trapping
+        squares, but I find it incredibly unlikely, especially given the data above. Perhaps
+        a mathematician with expertise in proofs and map theory could prove my conjecture
+        that the series is infinite, but I'm afraid that's a bit above my pay grade!
+      </p>
+      <p class="bodytext">
+        Another interesting question to ask about this puzzle is this: As the knight
+        explores to farther and farther trapping squares, does the distance
+        between consecutive squares increase? I don't mean the difference between their
+        values since, as the spirals get larger, even adjacent squares can have
+        values differing by millions. What I'm refering to is the number of moves
+        required for the knight to get from one trapping square to the next. By
+        keeping track of the number of moves made by the knight between trapping
+        squares for the first 20,000 values, I produced the following graph, which
+        is the distance that the knight had to move to get to each square from
+        the previous one:
+      </p>
+      <figure class="middlewide">
+        <img src="/images-videos/Knight_Trap/Moves_Between_Squares.png" width="700" height="370"
+        alt="Moves between trapping squares">
+        <figcaption>Number of Moves Between Consecutive Trapping Squares vs Square Order</figcaption>
+      </figure>
+      <p class="bodytext">
+        This graph makes me geek out so hard. It reveals a number of <b>really</b>
+        interesting truths. First, the number of moves required to reach each trapping
+        square from the previous one does not significantly increase at extremely large
+        values. The trend appears to be, at most, logarithmic, but could, in fact,
+        be shown to be asymptotal with a large enough data set. This suggests that trapping squares
+        are nearly as common at extreme distances as they are near the center. It also supports the conjecture that
+        there are infinitely many trapping squares, since their frequency doesn't significantly
+        decrease with distance from the center. Second, the number of moves
+        between consecutive trapping squares has an undeniable 'banded' pattern. This is
+        <b>so cool</b> because it is entirely unexplained and unexpected. I can't
+        conceive of a logical explanation for why the distances between consecutive
+        squares forms these 'dense bands' around 0, 3000, 6000, etc. (once the graph
+        levels off) and similarly forms 'dead bands' in between them. Why does this off-and-on pattern exist? What
+        is it about distances of 3,000 moves that makes them so much more common than
+        distances of 1,500 or 5,000 moves? Further research into this phenomenon
+        would be extremely interesting and could reveal greater truths about this
+        puzzle.
       </p>
     </div>
 
@@ -111,114 +271,6 @@
         width="680" height="480" align="center" allowfullscreen></iframe>
         <figcaption>150x150 Knight's Tour</figcaption>
       </figure>
-    </div>
-
-<!---------------------------------------------------------------------------->
-<!--                          Knight Trap                                    ->
-<!---------------------------------------------------------------------------->
-
-    <div class="main1">
-      <h3 id="KnightTrap">The Knight Trapping Problem</h3>
-      <figure class="rightlarge">
-        <img src="/images-videos/Knight_Trap/Knight_Trap_Number_Label.jpg" width="400" height="400"
-        alt="Spiral Labeling">
-        <figcaption>Spiral Labeling of Board</figcaption>
-      </figure>
-      <p class="bodytext">
-        This project is inspired by
-        <a href="https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A" title="Go to Numberphile Channel"
-        target="_blank">Numberphile's</a>
-        YouTube video entitled
-        <a href="https://www.youtube.com/watch?v=RGQe8waGJ4w&t=62s" title="Go to Video"
-        target="_blank">"The Trapped Knight"</a>.
-      </p>
-      <p class="bodytext">
-        The Knight Trapping Algorithm computes a unique, infinite sequence of numbers given by
-        the following problem:
-      </p>
-      <p class="bodytext">
-        The Knight Trapping Problem is another fascinating problem involving the
-        mechanics of a knight on a chess board. In this scenario, a knight is
-        placed on an infinitely large chess board. The squares on this board are labeled in
-        a very particular way. As shown in the diagram (right), the center
-        square is given the value (1), then the values increase in a spiral shape infinitely
-        outward. Initially, the knight is placed at square (1).
-      </p>
-      <figure class="leftlarge">
-        <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="400" height="400"
-        alt="First Trapping Square gif">
-        <figcaption>Discovery of the First Trapping Square</figcaption>
-      </figure>
-      <p class="bodytext">
-        The knight (moves like a knight from chess) begins at the central square (1)
-        and can move to any legal square (making an "L" shape). For example, a
-        knight at (1) could move to (10), (12), (14), (16), (18), (20), (22), or (24). The knight has
-        two movement constraints: It cannot visit a square it has already been to,
-        and it will always jump to the square with the smallest value. Once there,
-        the knight will again compare the squares' values of all legal moves, with
-        the exception of square (1), which it has already visited.
-      </p>
-      <p class="bodytext">
-        This process continues until, at some point, the knight becomes 'trapped'.
-        In this situation, the knight has already visited all 8 of the potential squares that
-        it could legally jump to. A square where the knight becomes trapped is called
-        a "trapping square." The first time the knight reaches one of these trapping squarres
-        is at square (2084). An animation of the knight discovering the first trapping square
-        is shown (right). In the Numberphile video upon which this project is based,
-        they stop there; since the knight is trapped, its path is over and 2084 is
-        the magical number where that occurs. However, I was interested in
-        whether or not the knight would get trapped <b>again</b> if it could continue
-        moving beyond square (2084). Thus, my algorithm was born. Once the knight reaches any
-        'trapping square,' it jumps backward a square to before it became trapped. (I made
-        sure to keep a running cache of all recent moves for this purpose). From there, the
-        knight continues past that trapping square until it gets trapped at a new one,
-        at which point this process repeats.
-        <br><br>
-      </p>
-      <figure class="videolarge">
-        <video width="500" height="500" controls autoplay>
-          <source src="/images-videos/Knight_Trap/Knight_Trap-8.mp4"
-          type="video/mp4">
-          Your browser does not support this video.
-        </video>
-        <figcaption>Discovery of the First 8 Trapping Squares</figcaption>
-      </figure>
-      <p class="bodytext">
-        By exploring farther and farther out into the board, the algorithm produces a series of integers,
-        which are the values associated with each trapping square that the knight discovers.
-        I have run my knight trapping algorithm for the first 750,000 trapping squares.
-        Doing so required allocating my entire computer's 16GB of RAM to the task
-        simultaneously and allowing the program to run for nearly a half hour in
-        addition to several other optimizations. Within the first 750,000, the
-        farthest trapping square discovered has a staggering value of (1,960,428,482).
-        This value occurs at the 749,770-th trapping square.
-        A complete list of the first 750,000 trapping square values can be found
-        <a href="trappingsquares.html">here</a>. Plotting the value of the trapping
-        squares against the order in which they are discovered yields the following
-        plot:
-      </p>
-      <figure class="middlewide">
-        <img src="/images-videos/Knight_Trap/Trapping_Squares_Graph.png" width="700" height="370"
-        alt="Trapping Squares Graph">
-        <figcaption>Graph of Trapping Values vs Order of Discovery</figcaption>
-      </figure>
-      <p class="bodytext">
-        Interestingly, the values of the trapping squares seem to increase linearly
-        as the knight explores farther from the center. Though a linear relationship
-        is not all that surprising, it is by no means a given! The size of the spirals
-        increases as the square of the radius, by virtue of the nature of the puzzle, and
-        there isn't any clear, logical intuition suggesting that the relationship would
-        be linear, so the fact that it is linear is incredibly interesting! (I actually
-        would have guessed that it'd be logarithmic.) Another interesting observation
-        is that the trapping squares remain relatively dense even at very large values.
-        If this pattern does, in fact, continue indefinitely, then one would expect this
-        series of values to be an <b>infinite</b> series. Although it's rather predicable
-        that the number of trapping squares is (probably) infinite, it isn't necessarily
-        guaranteed. It's technically possible that there is a finite number of trapping
-        squares, but I find it incredibly unlikely, especially given the data above. Perhaps
-        a mathematician with expertise in proofs and map theory could prove my conjecture
-        that the series is infinite, but I'm afraid that's a bit above my pay grade!
-      </p>
     </div>
 
 <!---------------------------------------------------------------------------->
