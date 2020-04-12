@@ -57,7 +57,7 @@
 figure.rightsmall {
   display: block;
   float: right;
-  width: 25%;
+  width: 20%;
   height: 235px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -71,7 +71,7 @@ figure.rightsmall {
 figure.rightmedium {
   display: block;
   float: right;
-  width: 35%;
+  width: 30%;
   height: 335px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -85,7 +85,7 @@ figure.rightmedium {
 figure.leftmedium {
   display: block;
   float: left;
-  width: 35%;
+  width: 30%;
   height: 335px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -99,7 +99,7 @@ figure.leftmedium {
 figure.rightlarge {
   display: block;
   float: right;
-  width: 45%;
+  width: 40%;
   height: 435px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -113,7 +113,7 @@ figure.rightlarge {
 figure.leftlarge {
   display: block;
   float: left;
-  width: 45%;
+  width: 40%;
   height: 435px;
   margin-top: 1em;
   margin-bottom: 1em;
