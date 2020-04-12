@@ -57,7 +57,7 @@
 figure.rightsmall {
   display: block;
   float: right;
-  width: 200px;
+  width: 25%;
   height: 235px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -71,7 +71,7 @@ figure.rightsmall {
 figure.rightmedium {
   display: block;
   float: right;
-  width: 300px;
+  width: 35%;
   height: 335px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -85,7 +85,7 @@ figure.rightmedium {
 figure.leftmedium {
   display: block;
   float: left;
-  width: 300px;
+  width: 35%;
   height: 335px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -99,7 +99,7 @@ figure.leftmedium {
 figure.rightlarge {
   display: block;
   float: right;
-  width: 400px;
+  width: 45%;
   height: 435px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -113,7 +113,7 @@ figure.rightlarge {
 figure.leftlarge {
   display: block;
   float: left;
-  width: 400px;
+  width: 45%;
   height: 435px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -129,7 +129,7 @@ figure.middlewide {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
+  width: 80%;
   height: 500px;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -157,7 +157,7 @@ figure.videolarge {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 60%;
   height: 500px;
   margin-top: 1em;
   margin-bottom: 3em;
@@ -168,7 +168,7 @@ figure.embedvideolarge {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 680px;
+  width: 100%;
   height: 480px;
   margin-top: 1em;
   margin-bottom: 3em;
@@ -179,7 +179,7 @@ figure.videomedium {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 350px;
+  width: 50%;
   height: 350px;
   margin-top: 1em;
   margin-bottom: 3em;
@@ -206,7 +206,6 @@ figure.sidebyside2 {
 }
 div.row {
   display: flex;
-  background-color: #f6f4f1;
   margin-left: 8%;
   width: 84%;
   border-radius: 10px;
