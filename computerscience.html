@@ -76,6 +76,7 @@
         I created to solve it computes a unique, infinite sequence of numbers given by
         the following problem:
       </p>
+      <h5>Background</h5>
       <p class="bodytext">
         The Knight Trapping Problem is a fascinating problem involving the
         mechanics of a knight on a chess board. The problem presents the following scenario, a knight is
@@ -84,8 +85,8 @@
         square is given the value (1), then the values increase in a spiral shape infinitely
         outward. Initially, the knight is placed at square (1).
       </p>
-      <figure class="leftlarge">
-        <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="100%" height="400"
+      <figure class="leftmedium">
+        <img src="/images-videos/Knight_Trap/Knight_Trap-1.gif" width="100%" height="300"
         alt="First Trapping Square gif">
         <figcaption>Discovery of the First Trapping Square</figcaption>
       </figure>
@@ -106,10 +107,13 @@
         is at square (2084). An animation of the knight discovering the first trapping square
         is shown (right). In the Numberphile video upon which this project is based,
         the problem stops there; since the knight is trapped, its path is over and 2084 is
-        the magical number where that occurs. However, I was interested in
-        whether or not the knight would get trapped <b>again</b> if it could continue
-        moving beyond square (2084). This is where the problem becomes a creation of my
-        own design and thus, my algorithm is born. Once the knight reaches any
+        the magical number where that occurs.
+      </p>
+      <h5 style="text-align:right;">My Algorithm</h5>
+      <p class="bodytext">
+        However, I was interested in whether or not the knight would get trapped <b>again</b>
+        if it could continue moving beyond square (2084). This is where the problem becomes
+        a creation of my own design and thus, my algorithm is born. Once the knight reaches any
         'trapping square,' it jumps backward a square to before it became trapped. (I made
         sure to keep a running cache of all recent moves for this purpose). From there, the
         knight continues past that trapping square until it gets trapped at a new one,
@@ -135,6 +139,9 @@
         This value occurs at the 4,997,555-th trapping square.
         A complete list of the first 5,000,000 trapping square values can be found here:
         <a href="/knight_trap_values/5million.txt" download>First 5,000,000 Trapping Squares</a>
+      </p>
+      <h5>Plots & Analysis</h5>
+      <p class="bodytext">
         Plotting the value of the trapping squares against the order in which
         they are discovered yields the following plot:
       </p>
@@ -204,12 +211,14 @@
 
     <div class="main2">
       <h3 id="KnightTour">The Knight's Tour</h3>
+      <h5>Background</h5>
       <p class="bodytext">
         The Knight's Tour is a famous, centuries-old chess puzzle which asks one question:
         How can a Knight (from the game of chess) navigate a chess board such that it visits every square
         exactly once? I love the game of chess so, naturally, when I learned about this
         puzzle, I became determined to solve it myself.
       </p>
+      <h5>My Algorithm</h5>
       <figure class="rightmedium">
         <img src="/images-videos/Knight_Tour/Knight_Tour-8-0-0.gif" width="100%" height="300"
         alt="8x8 Knight's Tour">
@@ -272,6 +281,7 @@
         I built this project as part of the course COS 226, <i>Algorithms and Data
         Structures</i>, at Princeton University.
       </p>
+      <h5>Background</h5>
       <figure class="rightmedium">
         <img src="/images-videos/Sliding_Puzzle/Sliding_Puzzle_34.gif" width="100%" height="300"
         alt="4x4 Sliding Puzzle">
@@ -288,6 +298,7 @@
         to any puzzle up to 5x5 in size in the shortest possible number of moves.
         <br>
       </p>
+      <h5>My Algorithm</h5>
       <figure class="leftlarge">
         <img src="/images-videos/Sliding_Puzzle/PuzzleA.gif" width="100%" height="400"
         alt="5x5 Sliding Puzzle">
@@ -342,6 +353,7 @@
         I built this project as part of the course COS 126, <i>Computer Science: An
         Interdisciplinary Approach</i>, at Princeton University.
       </p>
+      <h5>Background</h5>
       <figure class="rightsmall">
         <img src="/images-videos/Recursion/Sierpinski.png" width="100%" height="200"
         alt="Sierpinski's Triangle">
@@ -357,6 +369,7 @@
         Triangle is what makes recursive functions such a useful tool for creating art
         similar to Sierpinski's.
       </p>
+      <h5>My Implementation</h5>
       <p class="bodytext">
         To create fractal artwork inspired by Sierpinski's Triangle, I used recursive
         functions in Java in conjuction with Princeton standard libraries (for drawing).
@@ -413,6 +426,7 @@
         I built this project as part of the course COS 126, <i>Computer Science: An
         Interdisciplinary Approach</i>, at Princeton University.
       </p>
+      <h5>Background</h5>
       <p class="bodytext">
         The N-Body Problem is the problem of predicting the motion of N astronomical
         bodies subject to the forces of gravity between them. Solving this problem is
@@ -422,6 +436,7 @@
         are involved. For this project, rather than algebraically solve for the equations of motion for
         an arbitrarily large system, I sought to solve the N-Body problem computationally, instead.
       </p>
+      <h5>My Implementation</h5>
       <p class="bodytext">
         To do this, I treated the passage of time as a series of very short time steps and calculated
         the changes in trajectories at each step. Given the initial positions, velocities, and masses
@@ -471,6 +486,7 @@
 
     <div class="main1">
       <h3 id="Balls">Bouncing Balls</h3>
+      <h5>Background</h5>
       <figure class="rightsmall">
         <img src="/images-videos/Bouncing_Balls/dvd_logo.gif" width="100%" height="200"
         alt="Bouncing DVD Logo">
@@ -482,6 +498,7 @@
         with eachother and the walls. My process for creating this program went in
         several stages, each progressing from the previous.
       </p>
+      <h5>Inspiration</h5>
       <p class="bodytext">
         When I started, I wasn't actually planning to animate bouncing balls at all. Earlier
         that day, I had been staring at the classic bouncing DVD logo (right) on my family
@@ -495,6 +512,7 @@
         dynamic. I also replaced the square with a tennis ball because, let's face it,
         everything is better when sports is involved!
       </p>
+      <h5>Next Steps</h5>
       <figure class="rightmedium">
         <img src="/images-videos/Bouncing_Balls/Bouncing_Balls-7.gif" width="100%" height="300"
         alt="7 Bouncing Balls">
@@ -514,6 +532,7 @@
         ground, so I added a ball-return function to start them back up bouncing after
         they'd run out of energy.
       </p>
+      <h5>My Final Implementation</h5>
       <p class="bodytext">
         Unfortunately, the balls would just phase through each other instead of colliding,
         and being the perfectionist that I am, I could not tolerate this. Thus, I adjusted
