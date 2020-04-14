@@ -35,10 +35,15 @@
         Below, I have highlighted some of my more notable engineering projects to date:
         <ul>
           <li><a href="#Hero">Hero's Heat Engine</a></li>
-          <li><a href="#Accelerometer">Bottle Rocket Accelerometer</a></li>
+          <li><a href="#Accelerometer">Computational Modeling of Water Rocket Trajectories</a></li>
         </ul>
       </p>
     </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          Hero's Engine                                  ->
+<!---------------------------------------------------------------------------->
+
     <div class="main2">
       <h3 id="Hero">Hero's Heat Engine</h3>
       <p class="bodytext">
@@ -89,7 +94,7 @@
       </p>
       <h5>Testing</h5>
       <figure class="rightmedium">
-        <img src="/images-videos/Heros_Engine/Engine_Torch.jpg" width="100%" height="280"
+        <img src="/images-videos/Heros_Engine/Engine_Torch.jpg" width="100%" height="300"
         alt="Stationary Testing">
         <figcaption>Engine During Stationary Testing</figcaption>
       </figure>
@@ -132,12 +137,115 @@
         of thermodynamics and a great exploration of those concepts in real life.
       </p>
 
+<!---------------------------------------------------------------------------->
+<!--                          Accelerometer & Modeling                       ->
+<!---------------------------------------------------------------------------->
+
     </div>
     <div class="main1">
-      <h3 id="Accelerometer">Bottle Rocket Accelerometer</h3>
+      <h3 id="Accelerometer">Computational Modeling of Water Rocket Trajectories</h3>
       <p class="bodytext">
-        Filler
+        I completed this semester-long project in the laboratory section
+        of the course EGR 191, <i>Integrated Introduction to EMP: Physics</i> at
+        Princeton University. A complete, thorough account of the entire project,
+        including methodology, mathematics, analysis, graphs, and appendices can
+        be found in my
+        <a href="/Accelerometer_Project/Jeb_Carter_Accelerometer_Final_Report.pdf" download>
+        Lab Project Final Report PDF</a>. The report is a bit dense, so I have included a
+        general summary of my work and results in the sections below.
       </p>
+      <h5>Abstract/Introduction</h5>
+      <p class="bodytext">
+        For this project, I assembled an accelerometer and mounted it on a water rocket
+        to collect launch data. Then, using principles of physics and fluid dynamics, mathematical
+        analysis, and computational tools alongside known initial conditions, I produced a
+        mathematical model to simulate the launch computationally using Wolfram Mathematica. This model considered factors
+        such as air resistance, non-ideal high-pressure fluid mechanics, and friction. Furthermore,
+        I used the computational model to produce equations of motion and graphs relating
+        the position and velocity of the rocket over time in both the vertical and horizontal
+        directions. This computational model correctly predicted experimental accelerometer data with
+        an error of less than 5%.
+      </p>
+      <h5>The Accelerometer</h5>
+      <p class="bodytext">
+        The accelerometer assembly used to measure data during my rocket launch had
+        the capacity to measure linear acceleration along three perpendicular axes
+        using an accelerometer chip mounted on the circuit board, which contained small
+        test masses suspended by springs, outputting accelerometer data based on the
+        displacement of the springs. The accelerometer measured acceleration up to a
+        maximum of approximately 16g. The accelerometer converted the accelerometer data
+        to a digital format using a 13-bit Analog-to-Digital converter.
+      </p>
+      <p class="bodytext">
+        The accelerometer contained a MicroChip PIC16F690 microcontroller that sent
+        data from the accelerometer to memory and contained a highly accurate clock.
+        The microcontroller contained both flash memory, used to store the program to be executed,
+        and RAM, which stored intermediate results during calculations. It also contained timers and
+        multiple input/output ports. The board also contained an additional MicroChip memory
+        25AA512 memory chip, which held up to 219 = 524,288 bits of data. The memory was recorded
+        into two separate buffers, allowing for two rounds of data of approximately 65 seconds each
+        before needing to be transferred to a computer.
+      </p>
+      <p class="bodytext">
+        Once I had collected experimental accelerations from rocket launches, I determined
+        the position and velocity of the rocket at every time by running numerical integrals
+        of acceleration values in Wolfram Mathematica. Controlled laboratory tests revealed
+        that the calibrated accelerometer had an inherent drift, causing position calculations
+        derived from the acceleration to be off by approximately 0.4 m for each second of data
+        collection. This offset, along with a few other systematic errors, were accounted
+        for during data processing after the fact.
+      </p>
+      <h5>The Complete Physics Model in Wolfram Mathematica</h5>
+      <p class="bodytext">
+        In order to create an accurate physics model for the experimental rocket flight,
+        I first separated the launch into three 'phases,' lift-off on the launch tube,
+        thrust in the form of water exhaust, and freefall. For each phase, I began with simple
+        equations derived from Newton’s Second Law, Fnet = m*a, that could be solved
+        analytically for all phases of the flight. This initial model accounted for the
+        forces of gravity, pressure, water thrust, air resistance in freefall, and change in the
+        rocket’s mass during the water thrust phase. After creating the simplified model, I reevaluated
+        the governing equations from each phase to incorporate friction on the launch tube,
+        the launch angle relative to the vertical, the flight angle relative to the vertical, and
+        the drag force during thrust, as well as incorporating a new phase, the pressurized air exhaust phase.
+        The complete model required the use of Newton's 2nd Law, Bernoulli’s equation for incompressible flow,
+        Bernoulli’s equation for compressible flow, and trigonometry, creating a complicated mathematical
+        model for each phase. For a complete breakdown of all the mathematics involved and
+        a complete account of all equations used, please see my
+        <a href="/Accelerometer_Project/Jeb_Carter_Accelerometer_Final_Report.pdf" download>
+        Lab Project Final Report PDF</a>.
+      </p>
+      <h5>Comparison Between Model and Experimental Data</h5>
+      <figure class="middlewideshort">
+        <img src="/images-videos/Accelerometer/Table_Model_Experiment" width="100%" height="220"
+        alt="Table of Experimental Data vs Model">
+        <figcaption>Comparison Between Experimental Data and Model Values</figcaption>
+      </figure>
+      <p class="bodytext">
+        The table (above) and the figures (below) illustrate the remarkable similarity between
+        experimentally collected accelerometer data and the corresponding computer
+        model.
+      </p>
+      <div class="row">
+        <figure class="sidebyside3">
+          <img src="/images-videos/Accelerometer/Acceleration_full.png" alt="Acceleration - Full" style="width:100%;">
+        </figure>
+        <figure class="sidebyside3">
+          <img src="/images-videos/Accelerometer/Acceleration_1-3.png" alt="Acceleration - Phases 1-3" style="width:100%;">
+        </figure>
+        <figure class="sidebyside3">
+          <img src="/images-videos/Accelerometer/Acceleration_4.png" alt="Acceleration - Phase 4" style="width:100%;">
+        </figure>
+      </div>
+      <div class="row">
+        <figure class="sidebyside2">
+          <img src="/images-videos/Accelerometer/Velocity.png" style="width:100%;"
+          alt="Binary Star System">
+        </figure>
+        <figure class="sidebyside2">
+          <img src="/images-videos/Accelerometer/Position.png" style="width:100%;"
+          alt="Figure 8 System">
+        </figure>
+      </div>
     </div>
 
     <p class="bottomtext">
