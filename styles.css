@@ -388,8 +388,19 @@ ul {
   left: 8%;
   width: 84%
 }
+div.special {
+  background-color: #87a2be;
+  position: relative;
+  text-align: left;
+  right: 8%;
+  left: 8%;
+  width: 84%;
+  padding: 10px 0px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
 div.main1 {
-  background-color: #98AFC7;
+  background-color: #b9c9d9;
   position: relative;
   text-align: left;
   right: 8%;
@@ -400,7 +411,7 @@ div.main1 {
   margin-top: 20px;
 }
 div.main2 {
-  background-color: #C7B097;
+  background-color: #d0bda8;
   position: relative;
   text-align: left;
   right: 8%;
