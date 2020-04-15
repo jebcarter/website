@@ -110,6 +110,20 @@ figure.leftmedium {
   border-style: solid;
   border-radius: 4px;
 }
+figure.rightwide {
+  display: block;
+  float: right;
+  width: 50%;
+  height: 300px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 8%;
+  margin-left: 140px;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+}
 figure.rightlarge {
   display: block;
   float: right;
