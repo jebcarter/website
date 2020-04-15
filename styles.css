@@ -58,7 +58,7 @@ figure.rightsmall {
   display: block;
   float: right;
   width: 20%;
-  height: 235px;
+  height: 255px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
@@ -72,7 +72,7 @@ figure.leftsmall {
   display: block;
   float: left;
   width: 20%;
-  height: 235px;
+  height: 255px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: -4%;
@@ -86,7 +86,7 @@ figure.rightmedium {
   display: block;
   float: right;
   width: 30%;
-  height: 335px;
+  height: 355px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
@@ -100,7 +100,7 @@ figure.leftmedium {
   display: block;
   float: left;
   width: 30%;
-  height: 335px;
+  height: 355px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: -4%;
@@ -114,7 +114,7 @@ figure.rightwide {
   display: block;
   float: right;
   width: 45%;
-  height: 300px;
+  height: 340px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
@@ -128,7 +128,7 @@ figure.rightlarge {
   display: block;
   float: right;
   width: 40%;
-  height: 435px;
+  height: 455px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 8%;
@@ -142,7 +142,7 @@ figure.leftlarge {
   display: block;
   float: left;
   width: 40%;
-  height: 435px;
+  height: 455px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-left: 8%;
