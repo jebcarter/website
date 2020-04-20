@@ -1,5 +1,5 @@
 
-$(document).ready(function()) {
+$(document).ready(function() {
 
   /* When window is scrolled */
   $(window).scroll(function() {
@@ -9,7 +9,7 @@ $(document).ready(function()) {
     /* Find location of each element */
     $(divs).each(function(i) {
 
-      var top_of_div = $(this).position().top;
+      var top_of_div = $(this).offset().top + 60;
       var bottom_of_window = $(window).scrollTop() + $(window).height();
 
       /* If the div is visible, fade it in */
@@ -18,5 +18,4 @@ $(document).ready(function()) {
       }
     });
   });
-
 });

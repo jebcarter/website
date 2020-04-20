@@ -399,7 +399,7 @@ div.special {
   border-radius: 30px;
   margin-top: 20px;
 }
-div.main1 {
+.main1 {
   background-color: #b9c9d9;
   position: relative;
   text-align: left;
@@ -409,9 +409,9 @@ div.main1 {
   padding: 10px 0px;
   border-radius: 30px;
   margin-top: 20px;
-  opacity: 0;
+  opacity: 0.15;
 }
-div.main2 {
+.main2 {
   background-color: #d0bda8;
   position: relative;
   text-align: left;
@@ -421,7 +421,7 @@ div.main2 {
   padding: 10px 0px;
   border-radius: 30px;
   margin-top: 20px;
-  opacity: 0;
+  opacity: 0.15;
 }
 .name {
   margin-top: -32px;
