@@ -409,6 +409,7 @@ div.main1 {
   padding: 10px 0px;
   border-radius: 30px;
   margin-top: 20px;
+  opacity: 0;
 }
 div.main2 {
   background-color: #d0bda8;
@@ -420,6 +421,7 @@ div.main2 {
   padding: 10px 0px;
   border-radius: 30px;
   margin-top: 20px;
+  opacity: 0;
 }
 .name {
   margin-top: -32px;
