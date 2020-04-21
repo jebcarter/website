@@ -396,7 +396,7 @@ div.special {
   left: 8%;
   width: 84%;
   padding: 10px 0px;
-  border-radius: 30px;
+  border-radius: 20px;
   margin-top: 20px;
 }
 .main1 {
@@ -407,9 +407,9 @@ div.special {
   left: 8%;
   width: 84%;
   padding: 10px 0px;
-  border-radius: 30px;
+  border-radius: 20px;
   margin-top: 20px;
-  opacity: 0;
+  opacity: 0.15;
 }
 .main2 {
   background-color: #d0bda8;
@@ -419,9 +419,9 @@ div.special {
   left: 8%;
   width: 84%;
   padding: 10px 0px;
-  border-radius: 30px;
+  border-radius: 20px;
   margin-top: 20px;
-  opacity: 0;
+  opacity: 0.15;
 }
 .slide-in {
   transform: translateY(100px);
