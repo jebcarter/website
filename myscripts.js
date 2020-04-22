@@ -14,7 +14,7 @@ $(document).ready(function() {
 
       /* If the div is visible, fade it in */
       if (bottom_of_window > top_of_div) {
-        $(this).animate({'opacity':'1'},1300);
+        $(this).animate({'opacity':'1'},1000);
         $(this).addClass("slide-in");
       }
 
