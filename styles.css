@@ -424,7 +424,7 @@ div.special {
   opacity: 0.15;
 }
 .slide-in {
-  transform: translateY(100px);
+  transform: translateY(200px);
   animation: come-in 0.8s ease forwards;
 }
 @keyframes come-in {
