@@ -122,11 +122,23 @@
         alt="Vector Board Schematic">
         <figcaption>Vector Board Schematic Diagram</figcaption>
       </figure>
+
       <h5>Daughter Boards</h5>
-      <figure class="rightmedium">
-        <img src="/images-videos/Trains/Trickle_Charge_Schematic.png" width="100%" height="310"
+
+      <figure class="rightlarge">
+        <img src="/images-videos/Trains/Trickle_Charge_Schematic.png" width="100%" height="425"
         alt="Trickle Charge Circuit Schematic">
         <figcaption>Trickle Charge Circuit Schematic</figcaption>
+      </figure>
+      <figure class="rightlarge">
+        <img src="/images-videos/Trains/Track_Power_Relay_Schematic.png" width="100%" height="425"
+        alt="Track Power Toggle Relay Schematic">
+        <figcaption>Track Power Toggle Relay Schematic</figcaption>
+      </figure>
+      <figure class="rightlarge">
+        <img src="/images-videos/Trains/Hall-Effect_Sensor_Flip-Flop_Schematic.png" width="100%" height="425"
+        alt="Hall-Effect Sensor Flip-Flip Schematic">
+        <figcaption>Hall-Effect Sensor Flip-Flip Schematic</figcaption>
       </figure>
       <p class="bodytext">
         <b>Trickle Charge Switch Control Circuit:</b>
@@ -142,13 +154,7 @@
         of the railroad switches. Since a trigger cooldown of less than 10 seconds was never necessary due to
         the timing of the trains, using a trickle charge circuit with capacitors worked well.
         The figure (right) shows the circuitry schematic of the trickle charge switch control circuit.
-      </p>
-      <figure class="rightmedium">
-        <img src="/images-videos/Trains/Track_Power_Relay_Schematic.png" width="100%" height="310"
-        alt="Track Power Toggle Relay Schematic">
-        <figcaption>Track Power Toggle Relay Schematic</figcaption>
-      </figure>
-      <p class="bodytext">
+        <br><br>
         <b>Track Power Toggle Relay:</b>
         This circuit was responsible for toggling the power to the jail track in order to capture train
         #1. It consisted of a transistor which was toggled by a pin on the Vector Board VIA chip
@@ -156,15 +162,9 @@
         the jail loop. By default, the track power and loop power was open. When power was supplied to the
         relay, they connected and the jail loop received power. The figure (right) shows the track power
         toggle relay schematic.
-      </p>
-      <figure class="leftmedium">
-        <img src="/images-videos/Trains/Hall-Effect_Sensor_Flip-Flop_Schematic.png" width="100%" height="310"
-        alt="Hall-Effect Sensor Flip-Flip Schematic">
-        <figcaption>Hall-Effect Sensor Flip-Flip Schematic</figcaption>
-      </figure>
-      <p class="bodytext">
+        <br><br>
         <b>Hall-Effect Sensor Flip-Flop Circuit:</b>
-        This board, the schematic for which is shown in the figure (left), was used to sense the presence
+        This board, the schematic for which is shown in the figure (right), was used to sense the presence
         of a train on the jail track and consisted of two Hall-Effect sensors (each with a power, ground,
         and data-out pin) as well as a 7476N Flip-Flop (consisting of set, reset, power, and ground pins).
         The data-out lines for both Hall-Effect sensors were pulled to +5V using a 2.2k Ohm resistor. The
@@ -239,11 +239,6 @@
         mounted on a low friction ball bearing, which allowed for controlled rotational movement.
       </p>
       <h5>Testing</h5>
-      <figure class="leftmedium">
-        <img src="/images-videos/Heros_Engine/Engine_Torch.jpg" width="100%" height="325"
-        alt="Stationary Testing">
-        <figcaption>Engine During Stationary Testing</figcaption>
-      </figure>
       <p class="bodytext">
         Our testing phase included a series of motion tests and motion tests. During
         motion testing, the engine apparatus was suspended over a stairwell. Coiled around
@@ -255,6 +250,11 @@
         to lift the mass, the angular velocity of the engine, the fuel consuption
         of the blowtorch, and the mass water loss.
       </p>
+      <figure class="leftmedium">
+        <img src="/images-videos/Heros_Engine/Engine_Torch.jpg" width="100%" height="325"
+        alt="Stationary Testing">
+        <figcaption>Engine During Stationary Testing</figcaption>
+      </figure>
       <p class="bodytext">
         After all of the motion tests were completed, the group ran two “stationary” tests,
         during which the device was fixed in place. In the first test, the saturation
