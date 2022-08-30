@@ -40,10 +40,11 @@
     <div class="special">
       <h2>Experience</h2>
       <p class="bodytext">
-        Over the course of my first few years at Princeton, I’ve had the opportunity
+        Over the course of my time at Princeton, I’ve had the opportunity
         to participate in and lead several engineering projects related to my courses.
         Some of these projects include developing mission plans for interplanetary flight and
-        astronomical intercepts, designing and testing a heat engine, soldering
+        astronomical intercepts, developing computational systems for measurement and control,
+        designing and testing a heat engine, soldering
         and programming an accelerometer to calculate trajectories of water rockets,
         programming arduinos to autonomously collect laboratory data, and designing
         wind turbines in AutoCAD to optimize power output. <br><br>
@@ -61,11 +62,17 @@
 <!--Microprocessors: Measurement & Control - Model Train System              ->
 <!---------------------------------------------------------------------------->
 
-    <div class="main2">
+    <div class="main1">
       <h3 id="Trains">Microprocessors: Measurement & Control - Model Train System</h3>
       <p class="bodytext">
         I completed this project as a part of the course MAE 412, <i>Microprocessors
         for Measurement and Control</i>, with one classmate at Princeton University.
+        A complete, thorough account of the entire project,
+        including methodology, analysis, figures, and appendices can
+        be found in my
+        <a href="/Trains_Project/Jeb_Carter_MAE_412_Final_Report.pdf" download>
+        Project Final Report PDF</a>. The report is a bit dense, so I have included a
+        general summary of my work and results in the sections below.
       </p>
       <h5>Background</h5>
       <p class="bodytext">
@@ -84,6 +91,96 @@
         one train could be on a block at any time. Once a train had departed the block, another sensor
         cleared the block, allowing the second train to enter.
       </p>
+      <p class="bodytext">
+        The control system developed captured a target train (train #1) from the north
+        block onto a separate loop of track, colloquially, putting it ‘in jail’. Once train #1 was brought to
+        rest on the diverted track, the north block was cleared artificially, allowing a second train (train #8)
+        to enter the block, continue past the jail track, and exit the north track back onto the south track
+        on the other side. Once this occured, train #1 could be confident that train #8 was no longer occupying
+        the north track. As such, the system released train #1 back onto the north track where it then
+        departed the block. At this point, the system had returned to the initial state and repeated the
+        sequence. In essence, the capture system always ignored train #8, allowing it to pass jail, and
+        always captured train #1, only releasing it once confirmation was given that the north
+        block was clear, preventing all collisions. An image of the completed project board is shown below:
+      </p>
+      <figure class="middlewideshort">
+        <img src="/images-videos/Trains/Test_Stand_Imagec.png" width="100%" height="220"
+        alt="Complete Project Board">
+        <figcaption>Complete Project Board</figcaption>
+      </figure>
+      <h5>The Vector Board Computer</h5>
+      <p class="bodytext">
+        The Vector Board Computer (Schematic Below) was composed of 15 individual circuit
+        boards connected with 3M’s Scotchflex system. The board included a power adaptor with an
+        accompanying heat sink used to convert the high high voltage from the wall wart supply into a
+        usable 5V supply. Running the length of the vector board were two soldered bus strips which
+        provided the 5V supply and ground to the entire board. These buses were connected by four 0.1 µF
+        de-spiking capacitors. The following schematic illustrates an overview of the board architecture.
+      </p>
+      <figure class="middlewideshort">
+        <img src="/images-videos/Trains/Vector_Board_Schematic.png" width="100%" height="440"
+        alt="Vector Board Schematic">
+        <figcaption>Vector Board Schematic Diagram</figcaption>
+      </figure>
+      <h5>Daughter Boards</h>
+      <p class="bodytext">
+        <b>Trickle Charge Switch Control Circuit:</b>
+        Two of these boards were used to set the direction of and trigger the railroad switches.
+        Each board used two output pins of the VIA on the vector board. The first pin was used to
+        drive the directionality of the railroad switches. The second pin drove the discharge of two 4700
+        micro-Farad capacitors, ultimately triggering the physical mechanism (relay) to switch to
+        the direction specified by the direction bit. By multiplying the resistance of the
+        resistor in series with the capacitors, it was possible to determine the approximate charging time of
+        the capacitors to be ~9 seconds (for just below ⅔ charging). The power and ground for the
+        components were provided by the separate power supply (‘Wall Wart’), while the capacitors
+        were charged using the track power. The figure (right) shows the circuitry schematic of the
+        trickle charge switch control circuit.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Trains/Trickle_Charge_Schematic.png" width="100%" height="310"
+        alt="Trickle Charge Circuit Schematic">
+        <figcaption>Trickle Charge Circuit Schematic</figcaption>
+      </figure>
+      <p class="bodytext">
+        <b>Track Power Toggle Relay:</b>
+        This circuit was responsible for toggling the power to the jail track in order to capture train
+        #1. It consisted of a transistor which was toggled by a pin on the Vector Board VIA chip
+        as well as a relay which connected the main track power to the power of
+        the jail loop. By default, the track power and loop power was open. When power was supplied to the
+        relay, they connected and the jail loop received power. The figure (right) shows the track power
+        toggle relay schematic.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Trains/Track_Power_Relay_Schematic.png" width="100%" height="310"
+        alt="Track Power Toggle Relay Schematic">
+        <figcaption>Track Power Toggle Relay Schematic</figcaption>
+      </figure>
+      <p class="bodytext">
+        <b>Hall-Effect Sensor Flip-Flop Circuit:</b>
+        This board, the schematic for which is shown in the figure (right), was used to sense the presence
+        of a train on the jail track and consisted of two Hall-Effect sensors (each with a power, ground,
+        and data-out pin) as well as a 7476N Flip-Flop (consisting of set, reset, power, and ground pins).
+        The data-out lines for both Hall-Effect sensors were pulled to +5V using a 2.2k Ohm resistor. The
+        data-out of the first Hall-Effect sensor (the sensor first encountered first by a train running along
+        the jail loop) was connected to the ‘set’ pin for the Flip-Flop, while the data-out of the second
+        Hall-Effect sensor was connected to the ‘clear’ pin. Additionally, the data-out of the Flip-Flop chip
+        was fed into an input pin on the Vector Board VIA.
+        <br><br>
+        During nominal operation, train #1 traveled along the ‘jail’ loop before encountering the
+        first Hall Effect sensor. The output of the sensor then set the latch of the flip-flop circuit. The
+        latch was implemented to provide ample time for the Vector computer to identify the signal from
+        the Hall-Effect sensor. Had a latch not been used, it would have been possible for the Vector computer to
+        miss the momentary voltage drop from the Hall-Effect sensor (for example, if it was in an interrupt
+        sequence), and thus it would have been possible for the computer to never identify the presence of train
+        #1. With the latch, the output of the Hall-Effect sensor was stored until the ‘clear’ pin was activated.
+        In this design, the data-out of the second Hall-Effect sensor was used as the ‘clear’ pin, unlatching
+        the flip flop circuit and making it ready to detect another train.
+      </p>
+      <figure class="rightmedium">
+        <img src="/images-videos/Trains/Hall-Effect_Sensor_Flip-Flop_Schematic.png" width="100%" height="310"
+        alt="Hall-Effect Sensor Flip-Flip Schematic">
+        <figcaption>Hall-Effect Sensor Flip-Flip Schematic</figcaption>
+      </figure>
     </div>
 
 
