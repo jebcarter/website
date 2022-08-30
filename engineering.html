@@ -135,11 +135,13 @@
         drive the directionality of the railroad switches. The second pin drove the discharge of two 4700
         micro-Farad capacitors, ultimately triggering the physical mechanism (relay) to switch to
         the direction specified by the direction bit. By multiplying the resistance of the
-        resistor in series with the capacitors, it was possible to determine the approximate charging time of
-        the capacitors to be ~9 seconds (for just below ⅔ charging). The power and ground for the
+        resistor in series with the capacitance of the capacitors, it was possible to determine the approximate charging time of
+        the capacitors to be approximately ~9 seconds (for just below ⅔ charging). The power and ground for the
         components were provided by the separate power supply (‘Wall Wart’), while the capacitors
-        were charged using the track power. The figure (right) shows the circuitry schematic of the
-        trickle charge switch control circuit.
+        were charged using the track power. This architecture allowed for repeated and consistent toggling
+        of the railroad switches. Since a trigger cooldown of less than 10 seconds was never necessary due to
+        the timing of the trains, using a trickle charge circuit with capacitors worked well.
+        The figure (right) shows the circuitry schematic of the trickle charge switch control circuit.
       </p>
       <figure class="rightmedium">
         <img src="/images-videos/Trains/Track_Power_Relay_Schematic.png" width="100%" height="310"
