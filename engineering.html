@@ -60,7 +60,7 @@
     </div>
 
 <!---------------------------------------------------------------------------->
-<!--Microprocessors: Measurement & Control - Model Train System              ->
+<!--Senior Thesis - Development of a Semi-Autonomous Sailing Platform        ->
 <!---------------------------------------------------------------------------->
 
   <div class="main1">
@@ -77,8 +77,14 @@
       be found in my
       <a href="/Thesis_Docs/Jeb_Carter-Senior_Thesis.pdf" download>
       Senior Thesis Final Report</a>. A general summary of my work and results
-      are detailed in the sections below.
+      are detailed in the sections below. Additionally, the short video below, originally
+      made as a submission to the Princeton Research Day (PRD) student showcase, provides
+      a high-level overview of the project.
     </p>
+    <iframe style="height:520px;width:80%;position:relative;display:block;margin-left:auto;margin-right:auto"
+        src="https://www.youtube.com/embed/2XERhdp1zOw"
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h5>Abstract</h5>
     <p class="bodytext">
       This project approached the problem of autonomous sailing from a bottom-up approach,
@@ -94,9 +100,55 @@
       and performed admirably, demonstrating a robust and stable controller for
       semi-autonomous tacking.
     </p>
-    <h5>Introduction</h5>
+    <h5>The Sailing Platform</h5>
     <p class="bodytext">
-      
+      The boat used in this project, fondly named <i>Eaglespring</i>, is a modified version of
+      Tippecanoe Boats' T50 Carbon Fiber Racing Sloop. <i>Eaglespring</i> is approximately
+      50 inches long with a 2-foot keel and a 6-foot tall mast. The hull is made from a
+      molded carbon fiber layup comprising the lower portion of the hull. The deck, transom, rudder,
+      and keel were all constructed using 1/16 inch okoume marine plywood. All of these components
+      were clear-coated in WEST System epoxy resin (105 resin and 205 hardener) and treated with
+      multiple coats of a generic spar urethane exterior wood varnish for long-term durability.
+      The primary assembly method for the vessel is epoxy. Certain epoxy applications which required
+      greater rigidity utilized a thickened mixture of clear epoxy resin and colloidal silica powder
+      (406 filler), affording the joint greater structural integrity. Additionally, phenolic power
+      (407 filler) was used to increase the viscosity of resin batches to improve
+      the quality of the application.
+    </p>
+    <h5>Electronics</h5>
+    <p class="bodytext">
+      The brain of the electrical system onboard is a Raspberry Pi Pico running Micropython.
+      The Pico uses both of its serial UART pins. UART0 interfaces with an IP68 Waterproof Mini
+      Absolute Encoder, which collects wind direction data using a large vane mounted on the bow.
+      UART1 receives command and control data from a radio receiver (TGY-iA6B) linked to a
+      Turnigy TGY-i6S Radio Controller. The Pico uses an I2C data port to interface with an MPU6050
+      IMU, requiring both a clock line and a data line. Finally, the Pico sends PWM control
+      signals to the two servos, an HS-422, which controls the rudder, and an HS-785HB, which
+      controls the sails. The figure below shows the electrical schematic of all onboard electronics:
+    </p>
+    <figure class="middlewide">
+      <img src="/images-videos/Thesis/schematic.png" width="100%" height="465"
+      alt="Electronics Schematic">
+      <figcaption>Electronics Schematic</figcaption>
+    </figure>
+    <h5>Autonomous Control</h5>
+    <p class="bodytext">
+      The figure below illustrates the block diagram for the feedback system used to control
+      the heading of the boat:
+    </p>
+    <figure class="middlewideshort">
+      <img src="/images-videos/Thesis/block-diagram.png" width="100%" height="220"
+      alt="Feedback Control Block Diagram">
+      <figcaption>Feedback Control Block Diagram</figcaption>
+    </figure>
+    <p>
+      &theta;<sub>ref</sub> is the desired reference heading, &theta; is the actual heading,
+      &gamma; is the rudder deflection angle, and e is the error, the difference between the
+      &theta;<sub>ref</sub> and &theta;. The P(s) block is the "Plant," which represents the
+      physical dynamics of the boat given an input rudder angle &gamma;. The C(s) block is
+      the "Controller," which computes a target rudder angle &gamma; in order to reduce the error e.
+      P(s) is defined by the physical characteristics of the boat, whereas C(s) is created and designed
+      by the engineer.
     </p>
   </div>
 
