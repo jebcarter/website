@@ -96,6 +96,20 @@ figure.rightmedium {
   border-style: solid;
   border-radius: 4px;
 }
+figure.rightnarrow {
+  display: block;
+  float: right;
+  width: 20%;
+  height: 355px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 8%;
+  margin-left: 140px;
+  background-color: silver;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+}
 figure.leftmedium {
   display: block;
   float: left;
