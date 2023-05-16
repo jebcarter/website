@@ -81,10 +81,11 @@
       made as a submission to the Princeton Research Day (PRD) student showcase, provides
       a high-level overview of the project.
     </p>
-    <iframe style="height:520px;width:80%;position:relative;display:block;margin-left:auto;margin-right:auto"
+    <iframe style="height:400px;width:60%;position:relative;display:block;margin-left:auto;margin-right:auto"
         src="https://www.youtube.com/embed/2XERhdp1zOw"
         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
-        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
     <h5>Abstract</h5>
     <p class="bodytext">
       This project approached the problem of autonomous sailing from a bottom-up approach,
@@ -115,6 +116,11 @@
       (407 filler) was used to increase the viscosity of resin batches to improve
       the quality of the application.
     </p>
+    <figure class="rightmedium">
+      <img src="/images-videos/Thesis/eaglespring.jpg" width="100%" height="315"
+      alt="Eaglespring">
+      <figcaption><i>Eaglespring</i></figcaption>
+    </figure>
     <h5>Electronics</h5>
     <p class="bodytext">
       The brain of the electrical system onboard is a Raspberry Pi Pico running Micropython.
@@ -136,8 +142,8 @@
       The figure below illustrates the block diagram for the feedback system used to control
       the heading of the boat:
     </p>
-    <figure class="middlewideshort">
-      <img src="/images-videos/Thesis/block-diagram.png" width="100%" height="220"
+    <figure class="middlemedium">
+      <img src="/images-videos/Thesis/block-diagram.png" width="100%" height="170"
       alt="Feedback Control Block Diagram">
       <figcaption>Feedback Control Block Diagram</figcaption>
     </figure>
@@ -149,6 +155,16 @@
       the "Controller," which computes a target rudder angle &gamma; in order to reduce the error e.
       P(s) is defined by the physical characteristics of the boat, whereas C(s) is created and designed
       by the engineer.
+    </p>
+    <p>
+      The controller C(s) selected for the feedback system is a lead compensator. The feedback loop
+      was analyzed using Bode and Root-Locus plots to determine optimal controller coefficients. The
+      system was then converted to a continuous-time state-space system and then discretized to a constant
+      &Delta;t time step. Subsequently, the controller was tested using a variety of computer
+      simulations to validate the reliability of the controller on a variable-&Delta;t microcontroller.
+      For more details on the specific computational model for P(s), the choice of controller, or the
+      design and test of the feedback system, please reference the full
+      <a href="/Thesis_Docs/Jeb_Carter-Senior_Thesis.pdf" download>Senior Thesis Final Report</a>.
     </p>
   </div>
 
