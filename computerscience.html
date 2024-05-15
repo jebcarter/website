@@ -40,7 +40,7 @@
     <div class="special">
       <h2>Experience</h2>
       <p class="bodytext">
-        During my time at Princeton, I established extensive experience programming in
+        During my time at Princeton and Georgia Tech, I built a strong programming foundation in
         Python, Java, and C, working on numerous start-to-finish projects in these languages.
         Some of these projects included implementing a full Unix Shell, implementing heap manager
         modules for system memory management, implementing Burrows-Wheeler data compression,
@@ -56,6 +56,7 @@
         are listed on the Engineering page, though many of them include a significant computing component as well.
         Those detailed on this page include:
         <ul>
+          <li><a href="#RockPaperScissors">Rock-Paper-Scissors Battle</a></li>
           <li><a href="#KnightTrap">The Multiple Knight Trapping Problem</a></li>
           <li><a href="#KnightTour">The Knight's Tour</a></li>
           <li><a href="#8Puzzle">The Slider Puzzle Solver</a></li>
@@ -65,6 +66,245 @@
         </ul>
       </p>
     </div>
+
+<!---------------------------------------------------------------------------->
+<!--                          Rock Paper Scissors                            ->
+<!---------------------------------------------------------------------------->
+
+
+<div class="main1">
+  <h3 id="RockPaperScissors">Rock-Paper-Scissors Battle</h3>
+  <h5>Background</h5>
+  <p class="bodytext">
+    This project is an exploration of a fun twist on a classic children's game: Rock-Paper-Scissors.
+    The idea of a simulated multi-player rock-paper-scissors battle is not an original idea, but I
+    enjoyed thinking about the idea when I first saw it online and was inspired to build it
+    myself with my own personal implementations, features, and twists.
+  </p>
+  <h5>The Original Game</h5>
+  <p class="bodytext">
+    The basic idea of the game is a simple two-dimensional arena which contains a set of N players. Each player is initialized
+    to one of three types: Rock, Paper, or Scissors. The players move around the screen and, as they collide, convert
+    "target" players to their type (for example, scissors converts paper) according to traditional rock-paper-scissors rules.
+    The primary decision relevant to the design of the game is choosing the heuristics that the players use to decide which
+    direction to move. A rather naive heuristic would be for each player to simply move in the direction of their
+    nearest target. (e.g. Rock moves toward the nearest scissors) This strategy has a number of issues: First of all, players
+    will often run directly into their "foe" in an attempt to get to their target. Additionally, this heuristic allows players
+    of the same type to bunch up and occupy the same space as they hunt toward the nearest shared target. Ideally, players
+    of the same type should space themselves out a bit in order to avoid stacking on top of each other. Avoiding stacking makes
+    for a better-looking game and also has the strategic advantage of preventing a "chain reaction" conversion.
+  </p>
+  <figure class="rightsmall">
+    <img src="/images-videos/RPSLK/Heuristics.jpg" width="100%" height="215"
+    alt="Player Heuristics Diagram">
+    <figcaption>Player Heuristics Diagram</figcaption>
+  </figure>
+  <p class="bodytext">
+    <b>My Default Heuristic:</b>
+    The heuristic that I settled on for the first iteration of the game involves factors from all three player types.
+    The chosen step direction of a player at a given epoch is calculated as the weighted sum of four unit vectors. The first
+    vector, Aggression, points in the direction of the nearest target. The Cowardice vector points directly away
+    from the nearest foe. The third vector, Personal Space, points away from the nearest player of the same type, or "friend".
+    Finally, the fourth vector, Edge Penalty, points toward the center of the screen (away from the edges of the board). The Edge
+    Penalty vector encourages the players not to huddle on the edges of the screen. These four vectors are weighted according to
+    their relative emphasis in the heuristic and according to the distance from the player to its respective target, foe, friend,
+    or wall. In other words, a vector is weighted more heavily if the corresponding target, foe, etc is closer to the original
+    player.
+  </p>
+  <h5>The Rock-Paper-Scissors-Lizard-Spock Expansion</h5>
+  <figure class="rightmedium">
+    <img src="/images-videos/RPSLK/Game_Example.gif" width="100%" height="315"
+    alt="5 Player Game Simulation">
+    <figcaption>5 Player Game Simulation</figcaption>
+  </figure>
+  <p class="bodytext">
+    Upon completing the base 3-player game, I became interested in the idea of an N-player game. With more than
+    three player types, each would have more than one target and more than one foe, making the game much more
+    interesting and increasing the customizability. One such game is a variation on rock-paper-scissors popularized by
+    the TV Show "Big Bang Theory" called Rock-Paper-Scissors-Lizard-Spock. In this comedic variation, scissors cuts paper,
+    paper cuts rock, rock crushes lizard, lizard poisons spock, spock smashes scissors, scissors decapitates lizard,
+    lizard eats paper, paper disproves spock, spock vaporizes rock, and rock crushes scissors. Such a 5-way game results in
+    two targets and two foes for each player and creates much more interesting game dynamics.
+  </p>
+
+  
+  <h5>Leveraging Neural Networks to Model the Environment and Predict Outcomes</h5>
+  <p class="bodytext">
+    Once the game and corresponding GUI were completed, I implented statistics tools which can simulate large numbers of games for a
+    given set of player heuristics, populating win percentages for all 5 players progressively. I subsequently exported this data
+    to an external CSV and repeated this process for thousands of games, creating a large dataset representing the relative "fitness" of
+    various players. The problem then became: <b>How can I predict the win rate of a player given the heuristics of all other players
+    in the game?</b> Furthermore, <b>Can I generate an optimal player given a set of four opponents?</b> To answer these questions, I
+    developed a pair of Neural Networks, Model 1 and Model 2, to accomplish each of these tasks.
+  </p>
+  <p class="bodytext">
+    <b>Model 1 Methodology:</b> Model 1 is a Neural Network trained to predict the win percentage of a player given its behavior heuristics
+    (aggression, cowardice, and personal space) and those of all other players. Since there are 5 players, each with 3 behavior
+    characteristics, the network has 15 input nodes. It has a single output node which corresponds to the win rate of the first player
+    (i.e., the player corresponding to the first 3 inputs of the NN). A general schematic of the network is shown below.
+  </p>
+  <figure class="middlewide">
+    <img src="/images-videos/RPSLK/Model1.png" width="100%" height="470"
+    alt="Model 1 - Neural Network Architecture">
+    <figcaption>Model 1 - Neural Network Architecture</figcaption>
+  </figure>
+  <p class="bodytext">
+    The win prediction model uses 3 hidden layers with 1000, 200, and 100 nodes each, respectively. The rationale behind this structure
+    is rooted in the nature of the dataset. Specifically, the win rate of a player depends on more than the simple heuristics of all opponents
+    with respect to player type 1. If the only interactions in the simulation were between player 1 and an opponent, a single hidden layer
+    would likely be sufficient. However, the other players also interact with one another independently of player 1. As a consequence, the
+    relative success or failure of player 1 depends not only on how its own heuristics interact with other players, but on how those players'
+    heuristics interact with one another. For example, consider a scenario where player "Rock" has generally good heuristics
+    (i.e., behaviors that would perform well in most simulations). Also consider that Rock's two targets, Scissors and Lizard, have very poor
+    heuristic strategies (e.g., hyper-aggressive). In this environment, Scissors and Lizard are likely to go extinct early in the simulation,
+    leaving Rock with only foes (in this case, Spock and Paper). Therefore, even though Rock had generally advisable heuristics, it may not
+    perform well due to the interactions of other players around it. This is the motivation behind training a network with multiple hidden
+    layers so that these subtle interdependencies may be captured.
+  </p>
+  <p class="bodytext">
+    <b>Model 1 Results:</b> The model described above was trained and subsequently tested in Python using independent training and
+    testing sets. The resulting model achieved an R<sup>2</sup> of 0.90. While a slightly higher R<sup>2</sup> would be desirable,
+    this is an excellent metric. The simulations used to create the training and testing data are themselves subject to random variation,
+    so the precision of the model is also subject to these perturbations away from the true win percentages. Each scenario was simulated
+    N=100 times to minimize this effect, but it likely plays a significant role in lowering the upper ceiling on the optimality of the model.
+    The figures below show the actual outputs in relation to the model's predicted outputs, as well as their residuals.
+  </p>
+  <figure class="middlewide">
+    <img src="/images-videos/RPSLK/Model1_Output.png" width="100%" height="470"
+    alt="Model 1 - Output vs Predictions and Output vs Residuals">
+    <figcaption>Model 1 - Output vs Predictions and Output vs Residuals</figcaption>
+  </figure>
+
+  <p class="bodytext">
+    <b>Model 2 Methodology - Brute Force Method:</b> Two different implementations of Model 2 were implemented for this project,
+    each with its own benefits and drawbacks. The first implementation does not create a new model, but rather leverages the success of
+    Model 1 to create a brute-force solution to emulate a player generation model. For any given player, there are 729 different possible
+    combinations of the 3 heuristics (Personal Space, Cowardice, and Aggression, each ranging from 1 to 9). Because Model 1 is very reliable
+    in predicting the win rate of a given player, one can simply iterate through all 729 different player configurations to determine which
+    player has the highest win rate against a given set of opponents. The benefit of this model is that it is guaranteed to find the best
+    possible player, as defined by Model 1. Unfortunately, it is also highly computationally intensive to calculate all 729 predictions,
+    making this implementation impractical for any large-scale implementation.
+  </p>
+  <p class="bodytext">
+    <b>Model 2 Methodology - Machine Learning Method:</b> The second implementation of Model 2 created in this project seeks to
+    generate an optimal player using a neural network structure similar to Model 1. Unlike the first model, which attempts to determine the
+    win probability, this model does not consider the specific win rate, but rather attempts to generate a new player which will achieve the
+    highest-possible win rate against a particular set of opponents. A general schematic of the network is shown below.
+  </p>
+  <figure class="middlewide">
+    <img src="/images-videos/RPSLK/Model2.png" width="100%" height="470"
+    alt="Model 2 - Neural Network Architecture">
+    <figcaption>Model 2 - Neural Network Architecture</figcaption>
+  </figure>
+  <p class="bodytext">
+    This model has 12 input nodes, corresponding to the 3 heuristics of all 4 opponents, and 3 output nodes, corresponding to the 3
+    heuristics of the newly generated player. The network structure chosen for this model has two hidden layers with 1000 and 200 nodes,
+    respectively. The rationale behind this choice is similar to the rationale used for Model 1. Notably, this model should be expected to
+    pick up on many of the same subtle interactions between players which can impact relative player fitness. Only 2 hidden layers were
+    chosen for Model 2 (as opposed to 3 for Model 1) because the model proved susceptible to overfitting with too much complexity.
+  </p>
+  <p class="bodytext">
+    The primary obstacle in creating a viable player generation model was the inaccessibility of high-quality training data.
+    Specifically, the model needed to be trained using simulation outcomes where the optimal player is known. Using the simulation
+    environment alone, it would be incredibly slow and computationally intensive to determine the optimal player for many sets of
+    opponents, as that would require many rounds of simulation for each potential player just to generate a single datapoint. Instead,
+    the model was trained using the output of Model 1, which can already reliably determine the win rate of a given player against a
+    set of opponents. In order to generate data to train Model 2, optimal players were determined for random sets of opponents by exhaustive
+    brute-force search, choosing fitness using the win rate prediction given by Model 1. This technique proved successful in creating large
+    quantities of high-quality training data.
+  </p>
+  <p class="bodytext">
+    <b>Model 2 Results:</b> Model 2 also achieved a positive outcome, but not according to the same statistical metrics which validate
+    Model 1. Training Model 2 using the brute-force implementation described in the previous section yielded R<sup>2</sup> values of
+    0.64, 0.69, and 0.67 for each of the three outputs, Personal Space, Cowardice, and Aggression, respectively. The figures below
+    show the actual outputs in relation to the model's predicted outputs, as well as their residuals.
+  </p>
+  <figure class="middlelarge">
+    <img src="/images-videos/RPSLK/Model2_Output.png" width="100%" height="600"
+    alt="Model 2 - Output vs Predictions and Output vs Residuals">
+    <figcaption>Model 2 - Output vs Predictions and Output vs Residuals</figcaption>
+  </figure>
+  <p class="bodytext">
+    <b>Model 2 Results - A Deeper Dive:</b>At first glance, these results appear significantly inferior to the R<sup>2</sup> value generated by Model 1. However, closer
+    consideration of the data reveals that Model 2 is actually highly successful. The primary consideration is that there are often
+    several possible players with almost exactly the same win percentage. Consider a player with two candidate configurations for "optimality".
+    The two best-possible heuristics are 3/6/4 and 1/8/2 with win percentages of 45% and 46%, respectively. Obviously, the training
+    data would prefer the latter option as it achieves a higher win percentage. Let us assume, however, that Model 2 selects the former
+    option due to random variation. In this situation, the neural network successfully achieved a nearly-optimal player but will be scored
+    according to how close its chosen heuristics (3/6/4) align with the so-called "optimal" heuristics (1/8/2). This trend results in
+    R<sup>2</sup> scoring that is considerably more pessimistic about the fitness of the model than its true performance.
+  </p>
+  <p class="bodytext">
+    For a better measure of Model 2's performance, one can compare the win rate of the generated player to the win rate of the theoretically
+    optimal player, as determined by Model 1. This strategy has the benefit of allowing Model 2 to find equally good alternatives by scoring
+    on performance rather than precision. Performing this analysis on the model shows that the players generated by the neural network model
+    have win rates that are less than 2% off each's respective optimal player win rate. Evaluating the win percentages of NN-generated
+    players against the optimal win percentages yields an <b>R<sup>2</sup> value of 0.99.</b> This analysis illustrates that the player
+    generation model has considerably higher performance than its initial analysis would suggest.
+  </p>
+
+  <h5>GUI Integration for Behavioral Controls, Modeling, and Simulation</h5>
+  <p class="bodytext">
+    The final addition to the project was a comprehensive GUI to allow the user to vary heuristic weights, create illustrations
+    and visualization aids, simulate large numbers of game instances, and even leverage machine learning models to predict
+    simulation outcomes. The full GUI is shown in the image below:
+  </p>
+  <figure class="middlelarge">
+    <img src="/images-videos/RPSLK/GUI.png" width="100%" height="550"
+    alt="Custom GUI">
+    <figcaption>Custom GUI</figcaption>
+  </figure>
+  <p class="bodytext">
+    The GUI has 6 major sections: Behavior Control, Statistics & Modeling Output, Environment Configuration,
+    Statistics & Modeling Tools, Animation & Visualization Tools, and a Real-Time Data Logger.
+    <br>
+    <b>Section 1 - Behavior Control:</b> The top three rows of the GUI include slider bars to control the
+    relative weights of the three behavior heuristics: personal space, cowardice, and aggression. These fields can be varied
+    between 1-9, where larger numbers indicate a higher relative importance in calculating the resulting movement vector for
+    players of that type. Notably, the resulting movement vector depends on the <em>relative</em> scale of each heuristic.
+    This means that a 4-2-2 set of heuristics is actually the same as 8-4-4 because the relative scale between heuristics is equal. 
+  </p>
+  <br>
+    <b>Section 2 - Statistics & Modeling Output:</b> Below the player heuristic control section, there are two rows that display
+    percentages. The top row (black font) contains the win percentages resulting from simulating a large number of hidden simulations using
+    the heuristics and environment configuration currently specified. This field continuously updates as more simulations are completed.
+    Below the simulation output, there is a second row (red font) with another set of percentages. This field contains the <em>predicted</em>
+    win percentages of the 5 players, as specified by the Win Prediction Neural Network described above. Ideally, the win prediction
+    field should closely match the simulation output, indicating a successful neural network prediction.
+  </p>
+  <br>
+    <b>Section 3 - Environment Configuration:</b> The next section contains a set of miscellaneous tools used to vary certain
+    hyperparameters related to the simulation environment. The first two fields control, respectively, the number of players and the
+    animation speed of the simulation. The other two fields reset all player heuristics to their default and randomize all player
+    heuristics.
+  </p>
+  <br>
+    <b>Section 4 - Statistics & Modeling Tools:</b> These tools allow the user to simulate large numbers of games
+    to determine outcome statistics. They also facilitate the use of machine learning models to predict simulation outcomes and
+    generate new and strategic heuristic strategies. The "Predict Win Rates" button uses Model 1 (Predict Win Rates) to predict the
+    simulation outcome of the current set of players. The two "Generate Rock" buttons use the Machine Learning and Brute Force methods,
+    respectively, to generate a Rock player with optimal heuristics.
+  </p>
+  <br>
+    <b>Section 5 - Animation & Visualization Tools:</b> The next section has three buttons related to game animation and data
+    visualization.
+  </p>
+  <br>
+    <b>Section 6 - Data Logger:</b> Finally, the bottom section of the GUI is a real-time information logger which prints the status
+    of game simulations and provides positive feedback for buttons throughout the GUI.
+  </p>
+
+  <h5>Conclusion</h5>
+  <p class="bodytext">
+    This project constituted a fascinating exploration of many concepts involved in game theory, zero-sum game interactions,
+    swarm decision making, and heuristic-based relative fitness. What began as a simple simulation-style game grew into a set of neural
+    networks built on the foundations of thousands of datapoints. The first model was trained to predict the win rate of a player given its
+    behavior heuristics and those of its opponents. From there, a second neural network designed to generate optimal players was created
+    using training data generated by the first model. Ultimately, both models proved highly effective at achieving their respective goals
+    and now persist as functional features of the Rock-Paper-Scissors-Lizard-Spock game simulation environment.
+  </p>
+</div>
+
 
 <!---------------------------------------------------------------------------->
 <!--                          Knight Trap                                    ->
