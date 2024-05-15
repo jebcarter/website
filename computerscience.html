@@ -113,7 +113,7 @@
   </p>
   <h5>The Rock-Paper-Scissors-Lizard-Spock Expansion</h5>
   <figure class="rightmedium">
-    <img src="/images-videos/RPSLK/Game_Example.gif" width="100%" height="315"
+    <img src="/images-videos/RPSLK/Game_Example.gif" width="100%" height="350"
     alt="5 Player Game Simulation">
     <figcaption>5 Player Game Simulation</figcaption>
   </figure>
@@ -170,7 +170,7 @@
     The figures below show the actual outputs in relation to the model's predicted outputs, as well as their residuals.
   </p>
   <figure class="middlewide">
-    <img src="/images-videos/RPSLK/Model1_Output.png" width="100%" height="470"
+    <img src="/images-videos/RPSLK/Model1_Output.png" width="100%" height="410"
     alt="Model 1 - Output vs Predictions and Output vs Residuals">
     <figcaption>Model 1 - Output vs Predictions and Output vs Residuals</figcaption>
   </figure>
@@ -219,8 +219,8 @@
     0.64, 0.69, and 0.67 for each of the three outputs, Personal Space, Cowardice, and Aggression, respectively. The figures below
     show the actual outputs in relation to the model's predicted outputs, as well as their residuals.
   </p>
-  <figure class="middlelarge">
-    <img src="/images-videos/RPSLK/Model2_Output.png" width="100%" height="600"
+  <figure class="middletall">
+    <img src="/images-videos/RPSLK/Model2_Output.png" width="100%" height="620"
     alt="Model 2 - Output vs Predictions and Output vs Residuals">
     <figcaption>Model 2 - Output vs Predictions and Output vs Residuals</figcaption>
   </figure>
@@ -249,47 +249,42 @@
     and visualization aids, simulate large numbers of game instances, and even leverage machine learning models to predict
     simulation outcomes. The full GUI is shown in the image below:
   </p>
-  <figure class="middlelarge">
-    <img src="/images-videos/RPSLK/GUI.png" width="100%" height="550"
+  <figure class="middletall">
+    <img src="/images-videos/RPSLK/GUI.png" width="100%" height="620"
     alt="Custom GUI">
     <figcaption>Custom GUI</figcaption>
   </figure>
   <p class="bodytext">
     The GUI has 6 major sections: Behavior Control, Statistics & Modeling Output, Environment Configuration,
     Statistics & Modeling Tools, Animation & Visualization Tools, and a Real-Time Data Logger.
-    <br>
+    <br><br>
     <b>Section 1 - Behavior Control:</b> The top three rows of the GUI include slider bars to control the
     relative weights of the three behavior heuristics: personal space, cowardice, and aggression. These fields can be varied
     between 1-9, where larger numbers indicate a higher relative importance in calculating the resulting movement vector for
     players of that type. Notably, the resulting movement vector depends on the <em>relative</em> scale of each heuristic.
     This means that a 4-2-2 set of heuristics is actually the same as 8-4-4 because the relative scale between heuristics is equal. 
-  </p>
-  <br>
+    <br><br>
     <b>Section 2 - Statistics & Modeling Output:</b> Below the player heuristic control section, there are two rows that display
     percentages. The top row (black font) contains the win percentages resulting from simulating a large number of hidden simulations using
     the heuristics and environment configuration currently specified. This field continuously updates as more simulations are completed.
     Below the simulation output, there is a second row (red font) with another set of percentages. This field contains the <em>predicted</em>
     win percentages of the 5 players, as specified by the Win Prediction Neural Network described above. Ideally, the win prediction
     field should closely match the simulation output, indicating a successful neural network prediction.
-  </p>
-  <br>
+    <br><br>
     <b>Section 3 - Environment Configuration:</b> The next section contains a set of miscellaneous tools used to vary certain
     hyperparameters related to the simulation environment. The first two fields control, respectively, the number of players and the
     animation speed of the simulation. The other two fields reset all player heuristics to their default and randomize all player
     heuristics.
-  </p>
-  <br>
+    <br><br>
     <b>Section 4 - Statistics & Modeling Tools:</b> These tools allow the user to simulate large numbers of games
     to determine outcome statistics. They also facilitate the use of machine learning models to predict simulation outcomes and
     generate new and strategic heuristic strategies. The "Predict Win Rates" button uses Model 1 (Predict Win Rates) to predict the
     simulation outcome of the current set of players. The two "Generate Rock" buttons use the Machine Learning and Brute Force methods,
     respectively, to generate a Rock player with optimal heuristics.
-  </p>
-  <br>
+    <br><br>
     <b>Section 5 - Animation & Visualization Tools:</b> The next section has three buttons related to game animation and data
     visualization.
-  </p>
-  <br>
+    <br><br>
     <b>Section 6 - Data Logger:</b> Finally, the bottom section of the GUI is a real-time information logger which prints the status
     of game simulations and provides positive feedback for buttons throughout the GUI.
   </p>
