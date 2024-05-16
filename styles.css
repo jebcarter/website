@@ -315,7 +315,8 @@ div.sticky {
     left: 8%;
     right: 8%;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .buttonpagelinks {
   display: inline-block;
