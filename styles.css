@@ -24,7 +24,7 @@
 .gears-image {
   background-image: url("/images-videos/Headers/gears.jpg");
   background-color: #0C090A;
-  height: 160px;
+  height: 100px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
 .code-image {
   background-image: url("/images-videos/Headers/computercode.jpg");
   background-color: #0C090A;
-  height: 320px;
+  height: 160px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@
 .music-image {
   background-image: url("/images-videos/Headers/guitar.jpg");
   background-color: #0C090A;
-  height: 320px;
+  height: 100px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
