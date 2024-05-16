@@ -24,7 +24,7 @@
 .gears-image {
   background-image: url("/images-videos/Headers/gears.jpg");
   background-color: #0C090A;
-  height: 160px;
+  height: 140px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
 .code-image {
   background-image: url("/images-videos/Headers/computercode.jpg");
   background-color: #0C090A;
-  height: 200px;
+  height: 140px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@
 .music-image {
   background-image: url("/images-videos/Headers/guitar.jpg");
   background-color: #0C090A;
-  height: 160px;
+  height: 140px;
   background-position: center;
   position: relative;
   background-repeat: no-repeat;
@@ -315,7 +315,7 @@ div.sticky {
     left: 8%;
     right: 8%;
     border-radius: 12px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 .buttonpagelinks {
   display: inline-block;
